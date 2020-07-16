@@ -1,0 +1,1 @@
+export function chartHandler(hiOptions: any, chartOptions: any): any;

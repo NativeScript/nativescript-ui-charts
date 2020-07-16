@@ -1,0 +1,65 @@
+{
+	"name": "@nativescript/ui-charts",
+	"version": "1.0.0",
+	"description": "Nativescript wrapper for Highcharts iOS and Android SDKs",
+	"main": "ui-charts",
+	"typings": "index.d.ts",
+	"nativescript": {
+		"platforms": {
+			"android": "6.5.1",
+			"ios": "6.5.1"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NativeScript/ui-charts.git"
+	},
+	"scripts": {
+		"tsc": "npm i && tsc",
+		"build": "npm run tsc && npm run build.native",
+		"build.native": "node scripts/build-native.js",
+		"tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
+		"ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
+		"prepack": "npm run build.native",
+		"demo.ios": "tsc && npm i && cd ../demo && tns run ios",
+		"demo.android": "npm i && cd ../demo && tns run android",
+		"demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
+		"plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-highcharts && tns plugin add ../src",
+		"clean": "npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i"
+	},
+	"keywords": [
+		"NativeScript",
+		"JavaScript",
+		"Android",
+		"iOS",
+		"Charts"
+	],
+	"author": {
+		"name": "Marko Heyns",
+		"email": "marko.heyns@bevie.co",
+		"url": "https://github.com/markoImake"
+	},
+	"contributors": [
+		{
+			"name": "Shiva Prasad",
+			"email": "sp@shiv19.com",
+			"url": "https://github.com/shiv19"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/NativeScript/ui-charts/issues"
+	},
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/NativeScript/ui-charts",
+	"devDependencies": {
+		"@nativescript/core": "6.5.9",
+		"prompt": "^1.0.0",
+		"rimraf": "^2.6.3",
+		"semver": "^5.6.0",
+		"tns-platform-declarations": "6.5.9",
+		"tslint": "^5.12.1",
+		"typescript": "~3.4.5"
+	},
+	"dependencies": {},
+	"bootstrapper": "nativescript-plugin-seed"
+}

@@ -1,0 +1,1 @@
+export function plotOptionsHandler(hiOptions: any, plotOptions: any): any;

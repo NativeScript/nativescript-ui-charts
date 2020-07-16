@@ -1,0 +1,1 @@
+export function labelHandler(hiOptions: any, labelOptions: any): any;

@@ -1,0 +1,25 @@
+{
+  "nativescript": {
+    "id": "org.nativescript.chartsdemo",
+    "tns-android": {
+      "version": "6.5.1"
+    },
+    "tns-ios": {
+      "version": "6.5.1"
+    }
+  },
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
+  "dependencies": {
+    "@nativescript/core": "6.5.9",
+    "@nativescript/theme": "~2.3.0",
+    "@nativescript/ui-charts": "file:../src"
+  },
+  "devDependencies": {
+    "nativescript-dev-webpack": "~1.5.0",
+    "typescript": "~3.5.3"
+  },
+  "gitHead": "20a65d338ae8f8911087ab6615b89363f864b07b",
+  "readme": "NativeScript Application"
+}

@@ -1,0 +1,1 @@
+export function subtitleHandler(hiOptions: any, subtitleOptions: any): any;

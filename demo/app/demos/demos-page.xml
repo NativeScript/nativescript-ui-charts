@@ -1,0 +1,12 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
+  <ActionBar backgroundColor="black">
+    <Label text="@nativescript/ui-charts"></Label>
+  </ActionBar>
+  <GridLayout>
+    <ListView items="{{ selectedSource }}" itemTap="{{ onItemTap }}">
+      <ListView.itemTemplate>
+          <Label class="t-18" text="{{ '📈 ' + name }}" textWrap="true" />
+      </ListView.itemTemplate>
+    </ListView>
+  </GridLayout>
+</Page>

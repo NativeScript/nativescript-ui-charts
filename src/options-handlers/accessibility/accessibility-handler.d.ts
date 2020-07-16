@@ -1,0 +1,1 @@
+export function accessibilityHandler(hiOptions: any, accessibilityOptions: any): any;
