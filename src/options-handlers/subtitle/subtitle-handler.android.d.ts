@@ -1,1 +1,1 @@
-export default function (hiOptions: any, subtitleOptions: any): any;
+export declare function subtitleHandler(hiOptions: any, subtitleOptions: any): any;

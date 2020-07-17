@@ -1,1 +1,1 @@
-export default function (hiOptions: any, titleOptions: any): any;
+export declare function titleHandler(hiOptions: any, titleOptions: any): any;

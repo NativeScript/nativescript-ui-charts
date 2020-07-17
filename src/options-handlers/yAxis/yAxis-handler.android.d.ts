@@ -1,1 +1,1 @@
-export default function (hiOptions: any, yAxisOptions: any): any;
+export declare function yAxisHandler(hiOptions: any, yAxisOptions: any): any;

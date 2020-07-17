@@ -1,1 +1,1 @@
-export default function (hiOptions: any, labelOptions: any): any;
+export declare function labelHandler(hiOptions: any, labelOptions: any): any;

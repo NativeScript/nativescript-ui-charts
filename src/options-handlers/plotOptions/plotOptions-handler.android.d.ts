@@ -1,1 +1,1 @@
-export default function (hiOptions: any, plotOptions: any): any;
+export declare function plotOptionsHandler(hiOptions: any, plotOptionsOptions: any): any;

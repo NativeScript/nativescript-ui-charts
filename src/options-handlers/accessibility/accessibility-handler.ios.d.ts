@@ -1,1 +1,1 @@
-export default function (hiOptions: any, accessibilityOptions: any): any;
+export declare function accessibilityHandler(hiOptions: any, accessibilityOptions: any): any;

@@ -37,7 +37,6 @@ const viewModel = fromObject({
         pointStart: 2010,
       },
     },
-
     series: [
       {
         name: 'Installation',
