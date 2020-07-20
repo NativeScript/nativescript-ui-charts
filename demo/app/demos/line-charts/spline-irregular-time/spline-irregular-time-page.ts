@@ -5,11 +5,11 @@ const viewModel = fromObject({
   chartOptions: {
     chart: {
       type: 'spline',
-      backgroundColor: {
-        linearGradient: [0, 0, 0, 1], 
-        stops: ['rgba(132, 103, 144, 1)', 'rgba(163, 95, 103, 1)']
-      },
-      borderRadius: 6
+      // backgroundColor: {
+      //   linearGradient: [0, 0, 0, 1], 
+      //   stops: ['rgba(132, 103, 144, 1)', 'rgba(163, 95, 103, 1)']
+      // },
+      // borderRadius: 6
     },
     title: {
       text: 'Snow depth at Vikjafjellet, Norway',
@@ -27,18 +27,18 @@ const viewModel = fromObject({
       title: {
         text: 'Date',
       },
-      gridLineWidth: 0,
-      lineWidth: 1,
-      lineColor: 'rgba(255, 255, 255, 0.3)'
+      // gridLineWidth: 0,
+      // lineWidth: 1,
+      // lineColor: 'rgba(255, 255, 255, 0.3)'
     },
     yAxis: {
       title: {
         text: 'Snow depth (m)',
       },
       min: 0,
-      gridLineWidth: 0,
-      lineWidth: 1,
-      lineColor: 'rgba(255, 255, 255, 0.3)'
+      // gridLineWidth: 0,
+      // lineWidth: 1,
+      // lineColor: 'rgba(255, 255, 255, 0.3)'
     },
     tooltip: {
       headerFormat: '<b>{series.name}</b><br>',

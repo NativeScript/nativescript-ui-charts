@@ -8,6 +8,8 @@ export * from './marker/marker-handler';
 export * from './plotOptions/plotOptions-handler';
 export * from './responsive/responsive-handler';
 export * from './series/series-handler';
+export * from './stackLabels/stackLabels-handler';
+export * from './style/style-handler';
 export * from './subtitle/subtitle-handler';
 export * from './title/title-handler';
 export * from './tooltip/tooltip-handler';

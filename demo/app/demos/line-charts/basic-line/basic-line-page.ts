@@ -15,6 +15,13 @@ const viewModel = fromObject({
       title: {
         text: 'Number of Employees',
       },
+      stackLabels: {
+        enabled: true,
+        style: {
+          fontWeight: 'bold',
+          color: 'gray'
+        }
+      }
     },
 
     xAxis: {

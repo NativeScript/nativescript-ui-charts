@@ -1,0 +1,1 @@
+export function stackLabelsHandler(hiOptions: any, stackLabelsOptions: any): any;

@@ -1,0 +1,1 @@
+export function styleHandler(hiOptions: any, styleOptions: any): any;

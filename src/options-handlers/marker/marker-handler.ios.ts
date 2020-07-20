@@ -1,7 +1,7 @@
 export function markerHandler(hiOptions, markerOptions) {
   const marker = new HIMarker();
 
-  markerOptions.enabled && (marker.enabled = markerOptions.enabled);
+  typeof markerOptions.enabled !== 'undefined' && (marker.enabled = markerOptions.enabled);
 
   hiOptions.marker = marker;
 

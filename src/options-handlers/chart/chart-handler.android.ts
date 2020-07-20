@@ -1,4 +1,5 @@
 import { toLinkedList, fromJSToNativePrimitive, toHIColor } from "../helpers/helpers";
+import { styleHandler } from "../style/style-handler";
 
 export function chartHandler(hiOptions, chartOptions) {
   const chart = new com.highsoft.highcharts.common.hichartsclasses.HIChart();
@@ -17,11 +18,12 @@ export function chartHandler(hiOptions, chartOptions) {
     }
   }
 
-  chartOptions.borderRadius && chart.setBorderRadius(fromJSToNativePrimitive(chartOptions.borderRadius));
-  chartOptions.borderWidth && chart.setBorderWidth(fromJSToNativePrimitive(chartOptions.borderWidth));
+  chartOptions.borderRadius >= 0 && chart.setBorderRadius(fromJSToNativePrimitive(chartOptions.borderRadius));
+  chartOptions.borderWidth >= 0 && chart.setBorderWidth(fromJSToNativePrimitive(chartOptions.borderWidth));
   if (chartOptions.borderColor) {
     chart.setBorderColor(toHIColor(chartOptions.borderColor));
   }
+  chartOptions.style && styleHandler(chart, chartOptions.style);
 
   hiOptions.setChart(chart);
   

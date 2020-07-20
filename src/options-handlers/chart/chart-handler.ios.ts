@@ -1,4 +1,5 @@
 import { colorToString, toHIColor } from "../helpers/helpers";
+import { styleHandler } from "../style/style-handler";
 
 export function chartHandler(hiOptions, chartOptions) {
   const chart = new HIChart();
@@ -17,11 +18,12 @@ export function chartHandler(hiOptions, chartOptions) {
     }
   }
 
-  chartOptions.borderRadius && (chart.borderRadius = chartOptions.borderRadius);
-  chartOptions.borderWidth && (chart.borderWidth = chartOptions.borderWidth);
+  chartOptions.borderRadius >= 0 && (chart.borderRadius = chartOptions.borderRadius);
+  chartOptions.borderWidth >= 0 && (chart.borderWidth = chartOptions.borderWidth);
   if (chartOptions.borderColor) {
     chart.borderColor = toHIColor(chartOptions.borderColor);
   }
+  chartOptions.style && styleHandler(chart, chartOptions.style);
 
   hiOptions.chart = chart;
   

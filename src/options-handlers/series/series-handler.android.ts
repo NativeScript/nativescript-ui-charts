@@ -13,7 +13,7 @@ export function seriesHandler(hiOptions, seriesOptions) {
       
       sOpts.name && series.setName(sOpts.name);
       if (sOpts.data) {
-        if (sOpts.data[0].length) {
+        if (sOpts.data[0] !== null && sOpts.data[0].length) {
           const data = sOpts.data.map(item => {
             return toArrayList([new java.lang.Long(item[0]), new java.lang.Double(item[1])]);
           })
@@ -34,7 +34,7 @@ export function seriesHandler(hiOptions, seriesOptions) {
     const series = new com.highsoft.highcharts.common.hichartsclasses.HISeries();
     
     seriesOptions.label && labelHandler(series, seriesOptions.label);
-    seriesOptions.pointStart && series.setPointStart(fromJSToNativePrimitive(seriesOptions.pointStart));
+    seriesOptions.pointStart >= 0 && series.setPointStart(fromJSToNativePrimitive(seriesOptions.pointStart));
     seriesOptions.marker && markerHandler(series, seriesOptions.marker);
   
     hiOptions.setSeries(series);

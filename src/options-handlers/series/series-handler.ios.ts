@@ -29,7 +29,7 @@ export function seriesHandler(hiOptions, seriesOptions) {
     const series = new HISeries();
   
     seriesOptions.label && labelHandler(series, seriesOptions.label);
-    seriesOptions.pointStart && (series.pointStart = seriesOptions.pointStart);
+    seriesOptions.pointStart >= 0 && (series.pointStart = seriesOptions.pointStart);
   
     hiOptions.series = series;
     
