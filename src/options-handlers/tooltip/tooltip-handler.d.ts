@@ -1,1 +1,1 @@
-export function tooltipHandler(hiOptions: any, tooltipOptions: any): any;
+export function tooltipHandler(tooltipOptions: any): any;

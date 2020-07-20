@@ -1,1 +1,1 @@
-export function seriesHandler(hiOptions: any, seriesOptions: any): any;
+export function seriesHandler(seriesOptions: any): any;

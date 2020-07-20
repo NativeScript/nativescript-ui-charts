@@ -1,1 +1,1 @@
-export function titleHandler(hiOptions: any, titleOptions: any): any;
+export function titleHandler(titleOptions: any): any;

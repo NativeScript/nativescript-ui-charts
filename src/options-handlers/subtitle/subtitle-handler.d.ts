@@ -1,1 +1,1 @@
-export function subtitleHandler(hiOptions: any, subtitleOptions: any): any;
+export function subtitleHandler(subtitleOptions: any): any;

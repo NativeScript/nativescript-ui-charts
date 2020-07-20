@@ -15,3 +15,4 @@ export * from './title/title-handler';
 export * from './tooltip/tooltip-handler';
 export * from './xAxis/xAxis-handler';
 export * from './yAxis/yAxis-handler';
+export * from './zAxis/zAxis-handler';

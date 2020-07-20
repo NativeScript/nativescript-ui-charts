@@ -1,0 +1,144 @@
+import { isAndroid } from '@nativescript/core';
+import { optionsBuilder, toArrayList, convertJSArrayToNative } from '../helpers/helpers';
+
+export function seriesHandler(seriesOptions) {
+  const seriesSchema = {
+    accessibility: 'HIAccessibility',
+    allowPointSelect: 'number',
+    animation: 'HIAnimationOptionsObject',
+    animationLimit: 'number',
+    boostBlending: 'string',
+    boostThreshold: 'number',
+    className: 'string',
+    clip: 'number',
+    color: 'HIColor',
+    colorAxis: 'any',
+    colorIndex: 'number',
+    colorKey: 'string',
+    connectEnds: 'number',
+    connectNulls: 'number',
+    crisp: 'number',
+    cropThreshold: 'number',
+    cursor: 'string',
+    // custom: 'NSDictionary<any, any>',
+    // data: 'handled manually',
+    dashStyle: 'string',
+    dataLabels: 'HIDataLabels', // array
+    dataSorting: 'HIDataSortingOptionsObject',
+    definition: 'string',
+    describeSingleSeries: 'number',
+    descriptionFormatter: 'HIFunction',
+    dragDrop: 'HIDragDrop',
+    enableMouseTracking: 'number',
+    events: 'HIEvents',
+    findNearestPointBy: 'string',
+    getExtremesFromAll: 'number',
+    id: 'string',
+    includeInDataExport: 'number',
+    index: 'number',
+    keys: isAndroid ? 'ArrayList' : 'NSArray',
+    label: 'HILabel',
+    legendIndex: 'number',
+    lineWidth: 'number',
+    linecap: 'string',
+    linkedTo: 'string',
+    marker: 'HIMarker',
+    name: 'string',
+    negativeColor: 'HIColor',
+    nullPointValue: 'string',
+    opacity: 'number',
+    point: 'HIPoint',
+    pointAnnotationsDescription: 'string',
+    pointDescriptionEnabledThreshold: 'number',
+    pointDescriptionFormatter: 'HIFunction',
+    pointInterval: 'number',
+    pointIntervalUnit: 'string',
+    pointPlacement: 'any',
+    pointStart: 'number',
+    selected: 'number',
+    shadow: 'HIShadowOptionsObject',
+    showCheckbox: 'number',
+    showInLegend: 'number',
+    skipKeyboardNavigation: 'number',
+    softThreshold: 'number',
+    stack: 'string',
+    stacking: 'string',
+    states: 'HIStates',
+    step: 'string',
+    stickyTracking: 'number',
+    summary: 'HISummary',
+    threshold: 'number',
+    tooltip: 'HITooltip',
+    turboThreshold: 'number',
+    type: 'string',
+    visible: 'number',
+    xAxis: 'any',
+    xAxisDescription: 'string',
+    yAxis: 'any',
+    yAxisDescription: 'string',
+    zIndex: 'number',
+    zoneAxis: 'string',
+    zones: 'HIZones' // array
+  }
+
+  if (seriesOptions instanceof Array) {
+    // handle an array of series object
+    const seriesArr = [];
+
+    for (const sOpts of seriesOptions) {
+      const series = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HISeries() : new HISeries();
+      
+      if (sOpts.data && isAndroid) {
+        if (sOpts.data[0] !== null && sOpts.data[0].length) {
+          const data = sOpts.data.map(item => {
+            return toArrayList([new java.lang.Long(item[0]), new java.lang.Double(item[1])]);
+          });
+          (<any> series).setData(toArrayList(data));
+        } else {
+          (<any> series).setData(convertJSArrayToNative(sOpts.data));
+        }
+      } else if (sOpts.data) {
+        (<any> series).data = new NSArray({
+          array: sOpts.data.map(v => {
+            if (v instanceof Array) {
+              v = v.map(i => i === null ? NSNull.new() : i)
+            }
+  
+            return v === null ? NSNull.new() : v;
+          })
+        });
+      }
+
+      seriesArr.push(series);
+    }
+
+    return convertJSArrayToNative(seriesArr);
+  } else {
+    // handle a single series object
+    const series = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HISeries() : new HISeries();
+
+    const sOpts = seriesOptions;
+    if (sOpts.data && isAndroid) {
+      if (sOpts.data[0] !== null && sOpts.data[0].length) {
+        const data = sOpts.data.map(item => {
+          return toArrayList([new java.lang.Long(item[0]), new java.lang.Double(item[1])]);
+        });
+        (<any> series).setData(toArrayList(data));
+      } else {
+        (<any> series).setData(convertJSArrayToNative(sOpts.data));
+      }
+    } else if (sOpts.data) {
+      (<any> series).data = new NSArray({
+        array: sOpts.data.map(v => {
+          if (v instanceof Array) {
+            v = v.map(i => i === null ? NSNull.new() : i)
+          }
+
+          return v === null ? NSNull.new() : v;
+        })
+      });
+    }
+    
+    return optionsBuilder(seriesSchema, seriesOptions, series);
+  }
+}

@@ -1,1 +1,1 @@
-export function dateTimeLabelFormatsHandler(hiOptions: any, dateTimeLabelFormatsOptions: any): any;
+export function dateTimeLabelFormatsHandler(dateTimeLabelFormatsOptions: any): any;

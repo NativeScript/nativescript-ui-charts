@@ -1,1 +1,1 @@
-export function chartHandler(hiOptions: any, chartOptions: any): any;
+export function chartHandler(chartOptions: any): any;

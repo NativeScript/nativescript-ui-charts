@@ -1,4 +1,4 @@
-export function dateTimeLabelFormatsHandler(hiOptions, dateTimeLabelFormatsOptions) {
+export function dateTimeLabelFormatsHandler(dateTimeLabelFormatsOptions) {
   const dateTimeLabelFormats = new HIDateTimeLabelFormats();
 
   if (dateTimeLabelFormatsOptions.day) {
@@ -57,7 +57,5 @@ export function dateTimeLabelFormatsHandler(hiOptions, dateTimeLabelFormatsOptio
     dateTimeLabelFormats.year = year;
   }
 
-  hiOptions.dateTimeLabelFormats = dateTimeLabelFormats;
-
-  return hiOptions;
+  return dateTimeLabelFormats;
 }

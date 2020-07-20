@@ -1,1 +1,1 @@
-export function xAxisHandler(hiOptions: any, xAxisOptions: any): any;
+export function xAxisHandler(xAxisOptions: any): any;

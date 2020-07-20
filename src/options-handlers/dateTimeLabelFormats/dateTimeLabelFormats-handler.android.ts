@@ -1,4 +1,4 @@
-export function dateTimeLabelFormatsHandler(hiOptions, dateTimeLabelFormatsOptions) {
+export function dateTimeLabelFormatsHandler(dateTimeLabelFormatsOptions) {
   const dateTimeLabelFormats = new com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats();
 
   if (dateTimeLabelFormatsOptions.day) {
@@ -57,7 +57,5 @@ export function dateTimeLabelFormatsHandler(hiOptions, dateTimeLabelFormatsOptio
     dateTimeLabelFormats.setYear(year);
   }
 
-  hiOptions.setDateTimeLabelFormats(dateTimeLabelFormats);
-
-  return hiOptions;
+  return dateTimeLabelFormats;
 }
