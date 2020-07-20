@@ -4,3 +4,4 @@ export declare function toArrayList(arr: any, isNumber?: boolean): java.util.Arr
 export declare function toLinkedList(arr: any, isNumber?: boolean): java.util.LinkedList<any>;
 export declare function toArrayListRecursive(arr: any, isNumber?: boolean): java.util.ArrayList<any>;
 export declare function colorToString(color: any): string;
+export declare function toHIColor(color: any): any;

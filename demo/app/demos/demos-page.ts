@@ -10,6 +10,10 @@ const viewModel = fromObject({
       name: 'With Data Labels',
       route: 'demos/line-charts/with-data-labels/with-data-labels-page',
     },
+    {
+      name: 'Time data with irregular intervals',
+      route: 'demos/line-charts/spline-irregular-time/spline-irregular-time-page',
+    },
   ],
   selectedSource: [],
   onItemTap(args) {

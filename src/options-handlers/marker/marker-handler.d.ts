@@ -1,0 +1,1 @@
+export function markerHandler(hiOptions: any, markerOptions: any): any;

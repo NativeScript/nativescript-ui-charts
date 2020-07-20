@@ -1,3 +1,5 @@
+import { Color } from "@nativescript/core";
+
 export function convertJSArrayToNative(array) {
   // stub
   return array;
@@ -24,5 +26,11 @@ export function toArrayListRecursive(arr) {
 }
 
 export function colorToString(color: any) {
-  return `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a/255})`;
+  const c = new Color(color);
+  return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a/255})`;
+}
+
+export function toHIColor(color) {
+  const c = new Color(color);
+  return new HIColor(c.ios) as any;
 }
