@@ -72,16 +72,36 @@ export function colorToString(color: any) {
 }
 
 export function toHIColor(color) {
-  if (color.linearGradient && color.stops) {
-    const grad = color.linearGradient;
-    const gradient = new com.highsoft.highcharts.common.HIGradient(grad[0], grad[1], grad[2], grad[3]);
-    const stops = color.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
-    const stopslist = toLinkedList(stops);
+  if (color instanceof Array) {
+    const colorArray = [];
+    for (let i = 0; i < color.length; i++) {
+      const c = color[i];
+      if (c.linearGradient && c.stops) {
+        const grad = c.linearGradient;
+        const gradient = new com.highsoft.highcharts.common.HIGradient(grad[0], grad[1], grad[2], grad[3]);
+        const stops = c.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
+        const stopslist = toLinkedList(stops);
+    
+        colorArray.push(com.highsoft.highcharts.common.HIColor.initWithLinearGradient(gradient, stopslist));
+      } else {
+        const _c = new Color(c);
+        colorArray.push(com.highsoft.highcharts.common.HIColor.initWithRGBA(_c.r, _c.g, _c.b, _c.a/255) as any);
+      }
+    }
 
-    return com.highsoft.highcharts.common.HIColor.initWithLinearGradient(gradient, stopslist);
+    return convertJSArrayToNative(colorArray);
   } else {
-    const c = new Color(color);
-    return com.highsoft.highcharts.common.HIColor.initWithRGBA(c.r, c.g, c.b, c.a/255) as any;
+    if (color.linearGradient && color.stops) {
+      const grad = color.linearGradient;
+      const gradient = new com.highsoft.highcharts.common.HIGradient(grad[0], grad[1], grad[2], grad[3]);
+      const stops = color.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
+      const stopslist = toLinkedList(stops);
+  
+      return com.highsoft.highcharts.common.HIColor.initWithLinearGradient(gradient, stopslist);
+    } else {
+      const c = new Color(color);
+      return com.highsoft.highcharts.common.HIColor.initWithRGBA(c.r, c.g, c.b, c.a/255) as any;
+    }
   }
 }
 
