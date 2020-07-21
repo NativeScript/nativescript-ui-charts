@@ -1,1 +1,1 @@
-export function labelHandler(hiOptions: any, labelOptions: any): any;
+export declare function labelHandler(labelOptions: any): any;

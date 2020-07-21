@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2015",
         "module": "commonjs",
         "declaration": true,
         "removeComments": true,
@@ -8,7 +8,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
-        "lib": ["es6", "dom"],
+        "lib": ["ES2017", "es6", "dom"],
         "sourceMap": true,
         "pretty": true,
         "allowUnreachableCode": false,

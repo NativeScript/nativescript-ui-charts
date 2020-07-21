@@ -1,1 +1,1 @@
-export function responsiveHandler(hiOptions: any, responsiveOptions: any): any;
+export declare function responsiveHandler(responsiveOptions: any): any;

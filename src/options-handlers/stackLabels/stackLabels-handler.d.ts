@@ -1,1 +1,1 @@
-export function stackLabelsHandler(hiOptions: any, stackLabelsOptions: any): any;
+export declare function stackLabelsHandler(stackLabelsOptions: any): any;

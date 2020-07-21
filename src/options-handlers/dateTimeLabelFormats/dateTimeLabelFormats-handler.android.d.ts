@@ -1,1 +1,1 @@
-export declare function dateTimeLabelFormatsHandler(hiOptions: any, dateTimeLabelFormatsOptions: any): any;
+export declare function dateTimeLabelFormatsHandler(dateTimeLabelFormatsOptions: any): com.highsoft.highcharts.common.hichartsclasses.HIDateTimeLabelFormats;

@@ -1,1 +1,0 @@
-export function colorsHandler(hiOptions: any, colorsOptions: any): any;
