@@ -75,6 +75,7 @@ import { wordcloudHandler } from '../series/wordcloud/wordcloud-handler';
 import { xrangeHandler } from '../series/xrange/xrange-handler';
 import { layoutAlgorithmHandler } from "../layoutAlgorithm/layoutAlgorithm-handler";
 import { linkHandler } from "../link/link-handler";
+import { exportingHandler } from "../exporting/exporting-handler";
 
 const seriesHandlers = {
   'HIArea': (options) => areaHandler(options),
@@ -145,7 +146,7 @@ export const typesMap = {
   // 'HIData': (options) => dataHandler(options),
   // 'HIDefs': (options) => defsHandler(options),
   // 'HIDrilldown': (options) => drilldownHandler(options),
-  // 'HIExporting': (options) => exportingHandler(options),
+  'HIExporting': (options) => exportingHandler(options),
   'HIFunction': (options) => functionHandler(options),
   'HILabel': (options) => labelHandler(options),
   'HILabels': (options) => labelsHandler(options),
