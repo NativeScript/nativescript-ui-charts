@@ -1,1 +1,1 @@
-export declare function xAxisHandler(xAxisOptions: any): java.util.ArrayList<any> | NSArray<any>;
+export declare function xAxisHandler(xAxisOptions: any): java.util.ArrayList<any>;

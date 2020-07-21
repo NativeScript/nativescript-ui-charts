@@ -97,9 +97,5 @@ export function yAxisHandler(yAxisOptions) {
     axisArray.push(optionsBuilder(yAxisSchema, yAxisOptions, yAxis));
   }
 
-  if (isAndroid) {
-    return convertJSArrayToNative(axisArray);
-  } else {
-    return new NSArray({ array: axisArray });
-  }
+  return convertJSArrayToNative(axisArray);
 }

@@ -90,10 +90,5 @@ export function xAxisHandler(xAxisOptions) {
     axisArray.push(optionsBuilder(xAxisSchema, xAxisOptions, xAxis));
   }
 
-  if (isAndroid) {
-    return convertJSArrayToNative(axisArray);
-  } else {
-    return new NSArray({ array: axisArray });
-  }
-
+  return convertJSArrayToNative(axisArray);
 }

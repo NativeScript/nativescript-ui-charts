@@ -4,7 +4,7 @@ import { convertJSArrayToNative, optionsBuilder } from "../../helpers/helpers";
 
 export function bellcurveHandler(bellcurveOptions) {
   const bellcurveSchema = {
-    // baseSeries: 'any', TODO: figure out what the type is
+    baseSeries: 'number',
     fillColor: 'HIColor',
     fillOpacity: 'number',
     intervals: 'number',

@@ -31,7 +31,7 @@ const viewModel = fromObject({
     tooltip: {
       valueSuffix: ' millions',
     },
-    // TODO: dataLabels is now working
+    // TODO: dataLabels is not working
     // plotOptions: {
     //   bar: {
     //     dataLabels: {

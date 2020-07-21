@@ -1,1 +1,1 @@
-export declare function dataLabelsHandler(dataLabelsOptions: any): java.util.ArrayList<any> | NSArray<any>;
+export declare function dataLabelsHandler(dataLabelsOptions: any): java.util.ArrayList<any>;

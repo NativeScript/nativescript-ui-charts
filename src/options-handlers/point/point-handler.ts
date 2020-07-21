@@ -14,9 +14,9 @@ export function pointHandler(pointOptions) {
     valuePrefix: 'string',
     valueSuffix: 'string',
     x: 'number',
-    // xAxis: 'any', TODO: find out what type this is
+    xAxis: 'XAxis',
     y: 'number',
-    // yAxis: 'any', TODO: find out what type this is
+    yAxis: 'YAxis'
   };
 
   return optionsBuilder(pointSchema, pointOptions, point);

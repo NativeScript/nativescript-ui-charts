@@ -83,9 +83,5 @@ export function zAxisHandler(zAxisOptions) {
     axisArray.push(optionsBuilder(zAxisSchema, zAxisOptions, zAxis));
   }
 
-  if (isAndroid) {
-    return convertJSArrayToNative(axisArray);
-  } else {
-    return new NSArray({ array: axisArray });
-  }
+  return convertJSArrayToNative(axisArray);
 }

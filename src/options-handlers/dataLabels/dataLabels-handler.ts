@@ -1,4 +1,4 @@
-import { optionsBuilder, toArrayList } from "../helpers/helpers";
+import { optionsBuilder, toArrayList, convertJSArrayToNative } from "../helpers/helpers";
 import { isAndroid } from "@nativescript/core";
 
 export function dataLabelsHandler(dataLabelsOptions) {
@@ -62,9 +62,5 @@ export function dataLabelsHandler(dataLabelsOptions) {
     zIndex: 'number'
   };
 
-  if (isAndroid) {
-    return toArrayList([optionsBuilder(dataLabelsSchema, dataLabelsOptions, dataLabels)]);
-  } else {
-    return new NSArray({ array: [optionsBuilder(dataLabelsSchema, dataLabelsOptions, dataLabels)] });
-  }
+  return convertJSArrayToNative([optionsBuilder(dataLabelsSchema, dataLabelsOptions, dataLabels)]);
 }
