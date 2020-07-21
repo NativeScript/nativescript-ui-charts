@@ -25,6 +25,11 @@ import { creditsHandler } from "../credits/credits-handler";
 import { barHandler } from "../series/bar/bar-handler";
 import { functionHandler } from "../function/function-handler";
 import { pointHandler } from "../point/point-handler";
+import { splineHandler } from "../series/spline/spline-handler";
+import { arearangeHandler } from "../series/arearange/arearange-handler";
+import { bellcurveHandler } from "../series/bellcurve/bellcurve-handler";
+import { boxplotHandler } from "../series/boxplot/boxplot-handler";
+import { areasplineHandler } from "../series/areaspline/areaspline-handler";
 
 export function convertJSArrayToNative(array) {
   // stub
@@ -96,7 +101,7 @@ export function optionsBuilder(schema, options, containerObject) {
     // 'HIDefs': (options) => defsHandler(options),
     // 'HIDrilldown': (options) => drilldownHandler(options),
     // 'HIExporting': (options) => exportingHandler(options),
-    // 'HIFunction': (options) => functionHandler(options),
+    'HIFunction': (options) => functionHandler(options),
     'HILabel': (options) => labelHandler(options),
     'HILabels': (options) => labelsHandler(options),
     'HILine': (options) => lineHandler(options),
@@ -120,6 +125,12 @@ export function optionsBuilder(schema, options, containerObject) {
     'HIXAxis': (options) => xAxisHandler(options),
     'HIYAxis': (options) => yAxisHandler(options),
     'HIZAxis': (options) => zAxisHandler(options),
+
+    'HISpline': (options) => splineHandler(options),
+    'HIArearange': (options) => arearangeHandler(options),
+    'HIAreaspline': (options) => areasplineHandler(options),
+    'HIBellcurve': (options) => bellcurveHandler(options),
+    'HIBoxplot': (options) => boxplotHandler(options),
   };
 
   for (const schemaKey of schemaKeys) {

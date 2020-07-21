@@ -1,10 +1,8 @@
 import { isAndroid } from "@nativescript/core";
 import { seriesHandler } from "../series-handler";
-import { optionsBuilder } from "../../helpers/helpers";
+import { optionsBuilder, convertJSArrayToNative } from "../../helpers/helpers";
 
 export function barHandler(barOptions) {
-  const bar = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIBar() : new HIBar();
-
   const barSchema = {
     borderColor: 'HIColor',
     borderRadius: 'number',
@@ -25,5 +23,19 @@ export function barHandler(barOptions) {
     pointWidth: 'number'
   };
 
-  return seriesHandler(barOptions, optionsBuilder(barSchema, barOptions, bar));
+  if (barOptions instanceof Array) {
+    const seriesArr = [];
+
+    for (const opts of barOptions) {
+      const bar = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIBar() : new HIBar();
+
+      seriesArr.push(seriesHandler(opts, optionsBuilder(barSchema, opts, bar)));
+    }
+
+    return convertJSArrayToNative(seriesArr);
+  } else {
+    const bar = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIBar() : new HIBar();
+
+    return seriesHandler(barOptions, optionsBuilder(barSchema, barOptions, bar));
+  }
 }

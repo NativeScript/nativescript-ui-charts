@@ -81,73 +81,37 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
     zones: 'HIZones' // array
   }
 
-  if (seriesOptions instanceof Array) {
-    // handle an array of series object
-    const seriesArr = [];
-
-    for (const sOpts of seriesOptions) {
-      const series = isAndroid ? seriesSubClass || new com.highsoft.highcharts.common.hichartsclasses.HISeries() : seriesSubClass || new HISeries();
-      
-      if (sOpts.data && isAndroid) {
-        if (sOpts.data[0] !== null && sOpts.data[0].length) {
-          const data = sOpts.data.map(item => {
-            const innerArray = [];
-            for(let i = 0; i < item.length; i++) {
-              if (i === 0) {
-                innerArray.push(new java.lang.Long(item[0]));
-              } else {
-                innerArray.push(new java.lang.Double(item[i]));
-              }
-            }
-
-            return toArrayList(innerArray);
-          });
-          (<any> series).setData(toArrayList(data));
-        } else {
-          (<any> series).setData(convertJSArrayToNative(sOpts.data));
-        }
-      } else if (sOpts.data) {
-        (<any> series).data = new NSArray({
-          array: sOpts.data.map(v => {
-            if (v instanceof Array) {
-              v = v.map(i => i === null ? NSNull.new() : i)
-            }
-  
-            return v === null ? NSNull.new() : v;
-          })
-        });
-      }
-
-      seriesArr.push(optionsBuilder(seriesSchema, sOpts, series));
-    }
-
-    return convertJSArrayToNative(seriesArr);
-  } else {
-    // handle a single series object
-    const series = isAndroid ? seriesSubClass || new com.highsoft.highcharts.common.hichartsclasses.HISeries() : seriesSubClass || new HISeries();
-
-    const sOpts = seriesOptions;
-    if (sOpts.data && isAndroid) {
-      if (sOpts.data[0] !== null && sOpts.data[0].length) {
-        const data = sOpts.data.map(item => {
-          return toArrayList([new java.lang.Long(item[0]), new java.lang.Double(item[1])]);
-        });
-        (<any> series).setData(toArrayList(data));
-      } else {
-        (<any> series).setData(convertJSArrayToNative(sOpts.data));
-      }
-    } else if (sOpts.data) {
-      (<any> series).data = new NSArray({
-        array: sOpts.data.map(v => {
-          if (v instanceof Array) {
-            v = v.map(i => i === null ? NSNull.new() : i)
+  const series = isAndroid ? seriesSubClass || new com.highsoft.highcharts.common.hichartsclasses.HISeries() : seriesSubClass || new HISeries();
+  const sOpts = seriesOptions;
+  if (sOpts.data && isAndroid) {
+    if (sOpts.data[0] !== null && sOpts.data[0].length) {
+      const data = sOpts.data.map(item => {
+        const innerArray = [];
+        for(let i = 0; i < item.length; i++) {
+          if (i === 0) {
+            innerArray.push(new java.lang.Long(item[0]));
+          } else {
+            innerArray.push(new java.lang.Double(item[i]));
           }
+        }
 
-          return v === null ? NSNull.new() : v;
-        })
+        return toArrayList(innerArray);
       });
+      (<any> series).setData(toArrayList(data));
+    } else {
+      (<any> series).setData(convertJSArrayToNative(sOpts.data));
     }
-    
-    return optionsBuilder(seriesSchema, seriesOptions, series);
+  } else if (sOpts.data) {
+    (<any> series).data = new NSArray({
+      array: sOpts.data.map(v => {
+        if (v instanceof Array) {
+          v = v.map(i => i === null ? NSNull.new() : i)
+        }
+
+        return v === null ? NSNull.new() : v;
+      })
+    });
   }
+  
+  return optionsBuilder(seriesSchema, seriesOptions, series);
 }

@@ -1,10 +1,8 @@
 import { isAndroid } from "@nativescript/core";
 import { seriesHandler } from "../series-handler";
-import { optionsBuilder } from "../../helpers/helpers";
+import { optionsBuilder, convertJSArrayToNative } from "../../helpers/helpers";
 
 export function areaHandler(areaOptions) {
-  const area = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIArea() : new HIArea();
-
   const areaSchema = {
     fillColor: 'HIColor',
     fillOpacity: 'number',
@@ -13,5 +11,19 @@ export function areaHandler(areaOptions) {
     trackByArea: 'number'
   };
 
-  return seriesHandler(areaOptions, optionsBuilder(areaSchema, areaOptions, area));
+  if (areaOptions instanceof Array) {
+    const seriesArr = [];
+
+    for (const opts of areaOptions) {
+      const area = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIArea() : new HIArea();
+
+      seriesArr.push(seriesHandler(opts, optionsBuilder(areaSchema, opts, area)));
+    }
+
+    return convertJSArrayToNative(seriesArr);
+  } else {
+    const area = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIArea() : new HIArea();
+
+    return seriesHandler(areaOptions, optionsBuilder(areaSchema, areaOptions, area));
+  }
 }
