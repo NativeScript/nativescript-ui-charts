@@ -1,1 +1,1 @@
-export function plotOptionsHandler(plotOptions: any): any;
+export declare function plotOptionsHandler(plotOptionsOptions: any): any;

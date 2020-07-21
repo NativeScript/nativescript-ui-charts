@@ -1,1 +1,1 @@
-export function legendHandler(legendOptions: any): any;
+export declare function legendHandler(legendOptions: any): any;

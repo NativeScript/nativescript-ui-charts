@@ -1,4 +1,4 @@
-import { optionsBuilder } from '../helpers/helpers';
+import { optionsBuilder, convertJSArrayToNative } from '../helpers/helpers';
 import { isAndroid } from '@nativescript/core';
 
 export function zAxisHandler(zAxisOptions) {
@@ -72,5 +72,9 @@ export function zAxisHandler(zAxisOptions) {
     zoomEnabled: 'number'
   };
 
-  return optionsBuilder(zAxisSchema, zAxisOptions, zAxis);
+  if (isAndroid) {
+    return convertJSArrayToNative([optionsBuilder(zAxisSchema, zAxisOptions, zAxis)]);
+  } else {
+    return new NSArray({ array: [optionsBuilder(zAxisSchema, zAxisOptions, zAxis)] });
+  }
 }

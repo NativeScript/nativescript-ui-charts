@@ -8,7 +8,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "skipLibCheck": true,
-        "lib": ["ES2016", "es6", "dom"],
+        "lib": ["ES2017", "es6", "dom"],
         "sourceMap": true,
         "pretty": true,
         "allowUnreachableCode": false,

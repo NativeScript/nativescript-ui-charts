@@ -1,1 +1,1 @@
-export function yAxisHandler(yAxisOptions: any): any;
+export declare function yAxisHandler(yAxisOptions: any): java.util.ArrayList<any> | NSArray<any>;

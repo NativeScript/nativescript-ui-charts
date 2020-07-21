@@ -1,1 +1,1 @@
-export function zAxisHandler(zAxisOptions: any): any;
+export declare function zAxisHandler(zAxisOptions: any): java.util.ArrayList<any> | NSArray<any>;

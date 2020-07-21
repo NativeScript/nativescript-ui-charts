@@ -1,1 +1,1 @@
-export function markerHandler(markerOptions: any): any;
+export declare function markerHandler(markerOptions: any): any;

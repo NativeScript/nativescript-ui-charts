@@ -1,1 +1,1 @@
-export function styleHandler(styleOptions: any): any;
+export declare function styleHandler(styleOptions: any): any;

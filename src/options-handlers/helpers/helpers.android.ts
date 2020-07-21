@@ -128,7 +128,7 @@ export function optionsBuilder(schema, options, containerObject) {
   };
 
   for (const schemaKey of schemaKeys) {
-    if (optionsKeys.includes(schemaKey)) {
+    if ((<any>optionsKeys).includes(schemaKey)) {
       if (typeof typesMap[schema[schemaKey]] === 'function') {
         containerObject['set' + schemaKey[0].toUpperCase() + schemaKey.slice(1)](typesMap[schema[schemaKey]](options[schemaKey]));
       } else {

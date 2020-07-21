@@ -1,24 +1,12 @@
 import { UIChartsViewBase } from './ui-charts.common';
-import * as OptionsHandler from './options-handlers/';
+import { optionsHandler } from './options-handlers/options-handler';
 
 export class UIChartsView extends UIChartsViewBase {
 
     public onLoaded() {
         super.onLoaded();
 
-        const hiOptions = new HIOptions();
-        
-        for (const key in this.options) {
-            if (this.options.hasOwnProperty(key)) {
-                const handler = `${key}Handler`;
-                if (typeof OptionsHandler[handler] === 'function') {
-                    OptionsHandler[handler](hiOptions, this.options[key]);
-                } else {
-                    console.log('OptionsHandler is not implemented for key', key);
-                }
-            }
-        }
-
+        const hiOptions = optionsHandler(this.options);
         const exporting = new HIExporting();
         exporting.enabled = 0;
         hiOptions.exporting = exporting;
