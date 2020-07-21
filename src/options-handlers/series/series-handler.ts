@@ -1,7 +1,7 @@
 import { isAndroid } from '@nativescript/core';
 import { optionsBuilder, toArrayList, convertJSArrayToNative } from '../helpers/helpers';
 
-export function seriesHandler(seriesOptions) {
+export function seriesHandler(seriesOptions, seriesSubClass?) {
   const seriesSchema = {
     accessibility: 'HIAccessibility',
     allowPointSelect: 'number',
@@ -86,12 +86,21 @@ export function seriesHandler(seriesOptions) {
     const seriesArr = [];
 
     for (const sOpts of seriesOptions) {
-      const series = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HISeries() : new HISeries();
+      const series = isAndroid ? seriesSubClass || new com.highsoft.highcharts.common.hichartsclasses.HISeries() : seriesSubClass || new HISeries();
       
       if (sOpts.data && isAndroid) {
         if (sOpts.data[0] !== null && sOpts.data[0].length) {
           const data = sOpts.data.map(item => {
-            return toArrayList([new java.lang.Long(item[0]), new java.lang.Double(item[1])]);
+            const innerArray = [];
+            for(let i = 0; i < item.length; i++) {
+              if (i === 0) {
+                innerArray.push(new java.lang.Long(item[0]));
+              } else {
+                innerArray.push(new java.lang.Double(item[i]));
+              }
+            }
+
+            return toArrayList(innerArray);
           });
           (<any> series).setData(toArrayList(data));
         } else {
@@ -109,13 +118,13 @@ export function seriesHandler(seriesOptions) {
         });
       }
 
-      seriesArr.push(series);
+      seriesArr.push(optionsBuilder(seriesSchema, sOpts, series));
     }
 
     return convertJSArrayToNative(seriesArr);
   } else {
     // handle a single series object
-    const series = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HISeries() : new HISeries();
+    const series = isAndroid ? seriesSubClass || new com.highsoft.highcharts.common.hichartsclasses.HISeries() : seriesSubClass || new HISeries();
 
     const sOpts = seriesOptions;
     if (sOpts.data && isAndroid) {

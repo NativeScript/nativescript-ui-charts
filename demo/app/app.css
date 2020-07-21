@@ -3,3 +3,10 @@
 
 /* Place any CSS rules you want to apply on both iOS and Android here.
 This is where the vast majority of your CSS code goes. */
+.filter-pill {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  padding: 5 10;
+  margin: 5;
+  border-radius: 10;
+}

@@ -86,9 +86,20 @@ export function yAxisHandler(yAxisOptions) {
     zoomEnabled: 'number'
   };
 
-  if (isAndroid) {
-    return convertJSArrayToNative([optionsBuilder(yAxisSchema, yAxisOptions, yAxis)]);
+  const axisArray = [];
+  if (yAxisOptions instanceof Array) {
+    yAxisOptions.forEach(axisOpts => {
+      const yAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIYAxis() : new HIYAxis();
+      axisArray.push(optionsBuilder(yAxisSchema, axisOpts, yAxis));
+    })
   } else {
-    return new NSArray({ array: [optionsBuilder(yAxisSchema, yAxisOptions, yAxis)] });
+    const yAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIYAxis() : new HIYAxis();
+    axisArray.push(optionsBuilder(yAxisSchema, yAxisOptions, yAxis));
+  }
+
+  if (isAndroid) {
+    return convertJSArrayToNative(axisArray);
+  } else {
+    return new NSArray({ array: axisArray });
   }
 }

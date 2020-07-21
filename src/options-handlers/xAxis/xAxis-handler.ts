@@ -2,8 +2,6 @@ import { optionsBuilder, convertJSArrayToNative } from '../helpers/helpers';
 import { isAndroid } from '@nativescript/core';
 
 export function xAxisHandler(xAxisOptions) {
-  const xAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIXAxis() : new HIXAxis();
-
   const xAxisSchema = {
     accessibility: 'HIAccessibility',
     alignTicks: 'number',
@@ -81,10 +79,21 @@ export function xAxisHandler(xAxisOptions) {
     zoomEnabled: 'number'
   };
 
-  if (isAndroid) {
-    return convertJSArrayToNative([optionsBuilder(xAxisSchema, xAxisOptions, xAxis)]);
+  const axisArray = [];
+  if (xAxisOptions instanceof Array) {
+    xAxisOptions.forEach(axisOpts => {
+      const xAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIXAxis() : new HIXAxis();
+      axisArray.push(optionsBuilder(xAxisSchema, axisOpts, xAxis));
+    })
   } else {
-    return new NSArray({ array: [optionsBuilder(xAxisSchema, xAxisOptions, xAxis)] });
+    const xAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIXAxis() : new HIXAxis();
+    axisArray.push(optionsBuilder(xAxisSchema, xAxisOptions, xAxis));
+  }
+
+  if (isAndroid) {
+    return convertJSArrayToNative(axisArray);
+  } else {
+    return new NSArray({ array: axisArray });
   }
 
 }

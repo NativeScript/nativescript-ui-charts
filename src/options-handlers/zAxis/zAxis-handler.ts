@@ -72,9 +72,20 @@ export function zAxisHandler(zAxisOptions) {
     zoomEnabled: 'number'
   };
 
-  if (isAndroid) {
-    return convertJSArrayToNative([optionsBuilder(zAxisSchema, zAxisOptions, zAxis)]);
+  const axisArray = [];
+  if (zAxisOptions instanceof Array) {
+    zAxisOptions.forEach(axisOpts => {
+      const zAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIZAxis() : new HIZAxis();
+      axisArray.push(optionsBuilder(zAxisSchema, axisOpts, zAxis));
+    })
   } else {
-    return new NSArray({ array: [optionsBuilder(zAxisSchema, zAxisOptions, zAxis)] });
+    const zAxis = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIZAxis() : new HIZAxis();
+    axisArray.push(optionsBuilder(zAxisSchema, zAxisOptions, zAxis));
+  }
+
+  if (isAndroid) {
+    return convertJSArrayToNative(axisArray);
+  } else {
+    return new NSArray({ array: axisArray });
   }
 }

@@ -1,1 +1,1 @@
-export declare function seriesHandler(seriesOptions: any): any;
+export declare function seriesHandler(seriesOptions: any, seriesSubClass?: any): any;

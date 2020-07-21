@@ -34,7 +34,7 @@ export function legendHandler(legendOptions) {
     padding: 'number',
     reversed: 'number',
     rtl: 'number',
-    shadow: 'HICSSObject',
+    shadow: isAndroid ? 'boolean' : 'HICSSObject',
     squareSymbol: 'number',
     symbolHeight: 'number',
     symbolPadding: 'number',

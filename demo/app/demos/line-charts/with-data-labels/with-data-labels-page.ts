@@ -20,14 +20,14 @@ const viewModel = fromObject({
         text: 'Temperature (°C)',
       },
     },
-    plotOptions: {
-      line: {
-        dataLabels: {
-          enabled: true,
-        },
-        enableMouseTracking: false,
-      },
-    },
+    // plotOptions: {
+    //   line: {
+    //     dataLabels: {
+    //       enabled: true,
+    //     },
+    //     enableMouseTracking: true,
+    //   },
+    // },
     series: [
       {
         name: 'Tokyo',
