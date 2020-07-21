@@ -6,7 +6,7 @@ export function pyramidHandler(pyramidOptions) {
   const pyramidSchema = {
     borderColor: 'HIColor',
     borderWidth: 'number',
-    center: isAndroid ? 'ArrayList' : 'NSArray',
+    center: 'Array',
     colors: 'HIColor', // array
     depth: 'number',
     endAngle: 'number',

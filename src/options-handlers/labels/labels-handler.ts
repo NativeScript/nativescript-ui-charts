@@ -8,7 +8,7 @@ export function labelsHandler(labelsOptions) {
     accessibility: 'HILabelsAccessibility',
     align: 'string',
     allowOverlap: 'number',
-    autoRotation: isAndroid ? 'ArrayList' : 'NSArray',
+    autoRotation: 'Array',
     autoRotationLimit: 'number',
     backgroundColor: 'HIColor',
     borderColor: 'HIColor',

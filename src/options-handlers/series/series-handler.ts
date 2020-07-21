@@ -36,7 +36,7 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
     id: 'string',
     includeInDataExport: 'number',
     index: 'number',
-    keys: isAndroid ? 'ArrayList' : 'NSArray',
+    keys: 'Array',
     label: 'HILabel',
     legendIndex: 'number',
     lineWidth: 'number',

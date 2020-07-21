@@ -11,7 +11,7 @@ export function yAxisHandler(yAxisOptions) {
     alternateGridColor: 'HIColor',
     angle: 'number',
     breaks: 'HIBreaks', // array
-    categories: isAndroid ? 'ArrayList' : 'NSArray',
+    categories: 'Array',
     ceiling: 'number',
     className: 'string',
     crosshair: 'HICrosshair',
@@ -72,7 +72,7 @@ export function yAxisHandler(yAxisOptions) {
     tickPixelInterval: 'number',
     tickPosition: 'string',
     tickPositioner: 'HIFunction',
-    tickPositions: isAndroid ? 'ArrayList' : 'NSArray',
+    tickPositions: 'Array',
     tickWidth: 'number',
     tickmarkPlacement: 'string',
     title: 'HITitle',

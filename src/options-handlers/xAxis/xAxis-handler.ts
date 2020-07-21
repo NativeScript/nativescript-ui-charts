@@ -9,7 +9,7 @@ export function xAxisHandler(xAxisOptions) {
     alternateGridColor: 'HIColor',
     angle: 'number',
     breaks: 'HIBreaks', // array
-    categories: isAndroid ? 'ArrayList' : 'NSArray',
+    categories: 'Array',
     ceiling: 'number',
     className: 'string',
     crosshair: 'HICrosshair',
@@ -66,7 +66,7 @@ export function xAxisHandler(xAxisOptions) {
     tickPixelInterval: 'number',
     tickPosition: 'string',
     tickPositioner: 'HIFunction',
-    tickPositions: isAndroid ? 'ArrayList' : 'NSArray',
+    tickPositions: 'Array',
     tickWidth: 'number',
     tickmarkPlacement: 'string',
     title: 'HITitle',

@@ -6,7 +6,7 @@ export function pieHandler(pieOptions) {
   const pieSchema = {
     borderColor: 'HIColor',
     borderWidth: 'number',
-    center: isAndroid ? 'ArrayList' : 'NSArray',
+    center: 'Array',
     colors: 'HIColor', // array
     depth: 'number',
     endAngle: 'number',

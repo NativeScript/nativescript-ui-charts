@@ -4,7 +4,7 @@ import { convertJSArrayToNative, optionsBuilder } from "../../helpers/helpers";
 
 export function itemHandler(itemOptions) {
   const itemSchema = {
-    center: isAndroid ? 'ArrayList' : 'NSArray',
+    center: 'Array',
     colors: 'HIColor', // array
     endAngle: 'number',
     fillColor: 'HIColor',

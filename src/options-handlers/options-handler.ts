@@ -67,7 +67,7 @@ export function optionsHandler(options) {
     caption: 'HICaption',
     chart: 'HIChart',
     colorAxis: 'HIColorAxis', // array
-    colors: isAndroid ? 'ArrayList' : 'NSArray',
+    colors: 'Array',
     credits: 'HICredits',
     data: 'HIData',
     defs: 'HIDefs',

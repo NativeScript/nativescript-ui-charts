@@ -7,7 +7,7 @@ export function sunburstHandler(sunburstOptions) {
 	  allowTraversingTree: 'number',
     borderColor: 'HIColor',
     borderWidth: 'number',
-    center: isAndroid ? 'ArrayList' : 'NSArray',
+    center: 'Array',
     colorByPoint: 'number',
     colors: 'HIColor', // array
     fillColor: 'HIColor',

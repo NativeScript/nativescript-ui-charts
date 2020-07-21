@@ -6,7 +6,7 @@ export function dependencywheelHandler(dependencywheelOptions) {
   const dependencywheelSchema = {
     borderColor: 'HIColor',
     borderWidth: 'number',
-    center: isAndroid ? 'ArrayList' : 'NSArray',
+    center: 'Array',
     centerInCategory: 'number',
     colorByPoint: 'number',
     colors: 'HIColor', // array

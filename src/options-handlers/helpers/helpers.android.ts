@@ -4,7 +4,7 @@ import { typesMap as _typesMap } from "./_helpers.common";
 const typesMap = Object.assign({}, _typesMap, {
   'number': (options) => fromJSToNativePrimitive(options),
   'boolean': (options) => fromJSToNativePrimitive(options),
-  'ArrayList': (options) => convertJSArrayToNative(options),
+  'Array': (options) => convertJSArrayToNative(options),
   'LinkedList': (options) => toLinkedList(options),
   'HIColor': (options) => toHIColor(options),
 })
