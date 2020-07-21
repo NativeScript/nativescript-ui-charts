@@ -7,12 +7,16 @@ export class UIChartsView extends UIChartsViewBase {
         super.onLoaded();
 
         const hiOptions = optionsHandler(this.options);
+        console.log(hiOptions);
+
         (<any>this.nativeView).options = hiOptions;
     }
 
     public createNativeView() {
         const chartView = new HIChartView({ frame: CGRectMake(0, 0, 200, 200) }) as any;
         chartView.delegate = new HighchartsViewDelegateImpl();
+        const currentVC = getVisibleViewController();
+        chartView.viewController = currentVC;
         return chartView;
     }
 
@@ -56,4 +60,24 @@ class HighchartsViewDelegateImpl
     chartViewDidLoad(chart) {
         console.log("HighchartsViewDelegateImpl Did load chart:", chart)
     }
+}
+
+function getVisibleViewController(rootViewController?: UIViewController): UIViewController {
+    if (!rootViewController) {
+        rootViewController = UIApplication.sharedApplication.keyWindow.rootViewController;
+    }
+    if (rootViewController.presentedViewController) {
+        return getVisibleViewController(rootViewController.presentedViewController);
+    }
+
+    if (rootViewController.isKindOfClass(UINavigationController.class())) {
+        return getVisibleViewController((<UINavigationController>rootViewController).visibleViewController);
+    }
+
+    if (rootViewController.isKindOfClass(UITabBarController.class())) {
+        return getVisibleViewController(<UITabBarController>rootViewController);
+    }
+
+    return rootViewController;
+
 }
