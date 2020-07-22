@@ -51,6 +51,7 @@ export declare const typesMap: {
     'HIXrange': (options: any) => any;
     'string': (options: any) => any;
     'HIAccessibility': (options: any) => any;
+    'HIAlignObject': (options: any) => any;
     'HIChart': (options: any) => any;
     'HICredits': (options: any) => any;
     'HICSSObject': (options: any) => any;
@@ -65,8 +66,10 @@ export declare const typesMap: {
     'HILink': (options: any) => any;
     'HIMarker': (options: any) => any;
     'HIOptions3d': (options: any) => any;
+    'HIPanning': (options: any) => any;
     'HIPoint': (options: any) => any;
     'HIPlotOptions': (options: any) => any;
+    'HIResetZoomButton': (options: any) => any;
     'HIScrollablePlotArea': (options: any) => any;
     'HISeries': (options: any) => any;
     'HIStackLabels': (options: any) => any;

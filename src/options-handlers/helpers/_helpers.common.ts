@@ -1,4 +1,5 @@
 import { accessibilityHandler } from "../accessibility/accessibility-handler";
+import { alignObjectHandler } from "../alignObject/alignObject-handler";
 import { chartHandler } from "../chart/chart-handler";
 import { creditsHandler } from "../credits/credits-handler";
 import { dataLabelsHandler } from "../dataLabels/dataLabels-handler";
@@ -8,8 +9,10 @@ import { labelHandler } from "../label/label-handler";
 import { labelsHandler } from "../labels/labels-handler";
 import { legendHandler } from "../legend/legend-handler";
 import { markerHandler } from "../marker/marker-handler";
+import { panningHandler } from "../panning/panning-handler";
 import { plotOptionsHandler } from "../plotOptions/plotOptions-handler";
 import { pointHandler } from "../point/point-handler";
+import { resetZoomButtonHandler } from "../resetZoomButton/resetZoomButton-handler";
 import { scrollablePlotAreaHandler } from "../scrollablePlotArea/scrollablePlotArea-handler";
 import { seriesHandler } from "../series/series-handler";
 import { stackLabelsHandler } from "../stackLabels/stackLabels-handler";
@@ -141,6 +144,7 @@ const seriesHandlers = {
 export const typesMap = {
   'string': (options) => options,
   'HIAccessibility': (options) => accessibilityHandler(options),
+  'HIAlignObject': (options) => alignObjectHandler(options),
   // 'HIAnnotations': (options) => annotationsHandler(options),
   // 'HIBoost': (options) => boostHandler(options),
   // 'HICaption': (options) => captionHandler(options),
@@ -167,9 +171,11 @@ export const typesMap = {
   // 'HINoData': (options) => noDataHandler(options),
   'HIOptions3d': (options) => options3dHandler(options),
   // 'HIPane': (options) => paneHandler(options),
+  'HIPanning': (options) => panningHandler(options),
   'HIPoint': (options) => pointHandler(options),
   'HIPlotOptions': (options) => plotOptionsHandler(options),
   // 'HIResponsive': (options) => responsiveHandler(options),
+  'HIResetZoomButton': (options) => resetZoomButtonHandler(options),
   'HIScrollablePlotArea': (options) => scrollablePlotAreaHandler(options),
   'HISeries': (options) => seriesHandler(options),
   'HIStackLabels': (options) => stackLabelsHandler(options),

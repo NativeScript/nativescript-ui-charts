@@ -45,6 +45,15 @@ export class UIChartsView extends UIChartsViewBase {
         nativeview.options = opts;
     }
 
+    public setExtremes(newMin: any, newMax: any, xAxisIndex = 0) {
+        const nativeview = (<any>this.nativeView);
+        const opts = (nativeview.options as HIOptions);
+        const xaxis = opts.xAxis[xAxisIndex];
+        xaxis.min = newMin;
+        xaxis.max = newMax;
+        nativeview.zoomOut();
+        nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
+    }
 }
 
 class HighchartsViewDelegateImpl
