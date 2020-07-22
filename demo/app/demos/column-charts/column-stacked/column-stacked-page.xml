@@ -4,7 +4,7 @@
     xmlns:uc="@nativescript/ui-charts">
     
     <ActionBar backgroundColor="black">
-        <Label text="3D Scatter Chart"></Label>
+        <Label text="Stacked Column Chart"></Label>
         <NavigationButton android.systemIcon="ic_menu_back" tap="goBack" />
     </ActionBar>
     

@@ -5,6 +5,7 @@ const viewModel = fromObject({
   chartOptions: {
     chart: {
       margin: [100],
+      renderTo: 'container',
       type: 'scatter3d',
       options3d: {
         enabled: true,

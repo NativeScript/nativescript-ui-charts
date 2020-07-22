@@ -45,14 +45,16 @@ export function toHIColor(color) {
 
       if (c.radialGradient && c.stops) {
         const stops = c.stops.map((stop, index) => [index, colorToString(stop)]);
-        colorArray.push(new HIColor({ 
-          radialGradient: NSDictionary.dictionaryWithObjectsForKeys(c.radialGradient, ["cx", "cy", "r"]), 
+        const g = c.radialGradient;
+        colorArray.push(new HIColor({
+          radialGradient: NSDictionary.dictionaryWithObjectsForKeys([g.cx, g.cy, g.r], ["cx", "cy", "r"]), 
           stops: stops
         }));
       } else if (c.linearGradient && c.stops) {
         const stops = c.stops.map((stop, index) => [index, colorToString(stop)]);
+        const g = c.linearGradient;
         colorArray.push(new HIColor({ 
-          linearGradient: NSDictionary.dictionaryWithObjectsForKeys(c.linearGradient, ["x1", "y1", "x2", "y2"]), 
+          linearGradient: NSDictionary.dictionaryWithObjectsForKeys([g.x1, g.y1, g.x2, g.y2], ["x1", "y1", "x2", "y2"]), 
           stops: stops
         }));
       } else {
@@ -65,14 +67,16 @@ export function toHIColor(color) {
   } else {
     if (color.radialGradient && color.stops) {
       const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
+      const g = color.radialGradient;
       return new HIColor({ 
-        radialGradient: NSDictionary.dictionaryWithObjectsForKeys(color.radialGradient, ["cx", "cy", "r"]), 
+        radialGradient: NSDictionary.dictionaryWithObjectsForKeys([g.cx, g.cy, g.r], ["cx", "cy", "r"]), 
         stops: stops
       });
     } else if (color.linearGradient && color.stops) {
       const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
+      const g = color.linearGradient;
       return new HIColor({ 
-        linearGradient: NSDictionary.dictionaryWithObjectsForKeys(color.linearGradient, ["x1", "y1", "x2", "y2"]), 
+        linearGradient: NSDictionary.dictionaryWithObjectsForKeys([g.x1, g.y1, g.x2, g.y2], ["x1", "y1", "x2", "y2"]), 
         stops: stops
       });
     } else {
