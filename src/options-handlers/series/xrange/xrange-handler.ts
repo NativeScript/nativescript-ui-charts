@@ -9,7 +9,7 @@ export function xrangeHandler(xrangeOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     groupPadding: 'number',
     groupZPadding: 'number',
     grouping: 'number',

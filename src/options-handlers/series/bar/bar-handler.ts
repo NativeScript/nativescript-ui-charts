@@ -9,7 +9,7 @@ export function barHandler(barOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     depth: 'number',
     edgeColor: 'HIColor',
     edgeWidth: 'number',

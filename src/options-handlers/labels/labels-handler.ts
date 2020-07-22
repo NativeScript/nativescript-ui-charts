@@ -1,9 +1,7 @@
-import { optionsBuilder } from "../helpers/helpers";
+import { optionsBuilder, convertJSArrayToNative } from "../helpers/helpers";
 import { isAndroid } from "@nativescript/core";
 
 export function labelsHandler(labelsOptions) {
-  const labels = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HILabels() : new HILabels();
-
   const labelsSchema = {
     accessibility: 'HILabelsAccessibility',
     align: 'string',
@@ -40,5 +38,18 @@ export function labelsHandler(labelsOptions) {
     zIndex: 'number'
   };
 
-  return optionsBuilder(labelsSchema, labelsOptions, labels);
+  if (labelsOptions instanceof Array) {
+    const labelsArray = [];
+
+    for(let i = 0; i < labelsOptions.length; i++) {
+      const labels = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HILabels() : new HILabels();
+      labelsArray.push(optionsBuilder(labelsSchema, labelsOptions, labels));
+    }
+
+    return convertJSArrayToNative(labelsArray);
+  } else {
+    const labels = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HILabels() : new HILabels();
+  
+    return optionsBuilder(labelsSchema, labelsOptions, labels);
+  }
 }

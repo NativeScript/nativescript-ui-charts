@@ -7,7 +7,7 @@ export function errorbarHandler(errorbarOptions) {
     boxDashStyle: 'string',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     depth: 'number',
     edgeColor: 'HIColor',
     edgeWidth: 'number',

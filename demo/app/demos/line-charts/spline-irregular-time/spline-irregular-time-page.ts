@@ -5,22 +5,54 @@ const viewModel = fromObject({
   chartOptions: {
     chart: {
       type: 'spline',
-      // backgroundColor: {
-      //   linearGradient: {
-      //     x1: 0,
-      //     y1: 0,
-      //     x2: 0,
-      //     y2: 1
-      //   }, 
-      //   stops: ['rgba(132, 103, 144, 1)', 'rgba(163, 95, 103, 1)']
-      // },
-      // borderRadius: 6
+      backgroundColor: {
+        linearGradient: {
+          x1: 0,
+          y1: 0,
+          x2: 0,
+          y2: 1
+        }, 
+        stops: ['rgba(132, 103, 144, 1)', 'rgba(163, 95, 103, 1)']
+      },
+      borderRadius: 6
+    },
+    navigation: {
+      buttonOptions: {
+        symbolStroke: 'rgba(255, 255, 255, 0.6)',
+        theme: {
+          fill: 'rgba(255, 255, 255, 0)'
+        }
+      }
+    },
+    credits: {
+      style: {
+        color: 'rgba(255, 255, 255, 0.5)'
+      }
     },
     title: {
       text: 'Snow depth at Vikjafjellet, Norway',
+      align: 'left',
+      style: {
+        fontFamily: 'Arial',
+        fontSize: '14px',
+        color: 'rgba(255, 255, 255, 0.7)'
+      },
+      y: 16
     },
     subtitle: {
       text: 'Irregular time data in Highcharts JS',
+      align: 'left',
+      style: {
+        fontFamily: 'Arial',
+        fontSize: '9px',
+        color: 'rgba(255, 255, 255, 0.7)'
+      },
+      y: 28
+    },
+    legend: {
+      itemStyle: {
+        color: 'rgba(255, 255, 255, 0.7)'
+      }
     },
     xAxis: {
       type: 'datetime',
@@ -31,19 +63,42 @@ const viewModel = fromObject({
       },
       title: {
         text: 'Date',
+        style: {
+          color: 'rgba(255, 255, 255, 1)',
+        }
       },
-      // gridLineWidth: 0,
-      // lineWidth: 1,
-      // lineColor: 'rgba(255, 255, 255, 0.3)'
+      gridLineWidth: 0,
+      lineWidth: 1,
+      lineColor: 'rgba(255, 255, 255, 0.3)',
+      tickColor: 'rgba(255, 255, 255, 0)',
+      labels: {
+        style: {
+          color: 'rgba(255, 255, 255, 1)',
+          fontFamily: 'Arial',
+          fontSize: '10px',
+        }
+      }
     },
     yAxis: {
       title: {
         text: 'Snow depth (m)',
+        style: {
+          color: 'rgba(255, 255, 255, 1)',
+        }
       },
       min: 0,
-      // gridLineWidth: 0,
-      // lineWidth: 1,
-      // lineColor: 'rgba(255, 255, 255, 0.3)'
+      gridLineWidth: 0,
+      lineWidth: 1,
+      lineColor: 'rgba(255, 255, 255, 0.3)',
+      tickColor: 'rgba(255, 255, 255, 0)',
+      labels: {
+        x: -5,
+        style: {
+          color: 'rgba(255, 255, 255, 1)',
+          fontFamily: 'Arial',
+          fontSize: '10px',
+        }
+      }
     },
     tooltip: {
       headerFormat: '<b>{series.name}</b><br>',
@@ -66,6 +121,7 @@ const viewModel = fromObject({
     series: [
       {
         name: 'Winter 2014-2015',
+        color: '#F5B041',
         data: [
           [Date.UTC(1970, 10, 25), 0],
           [Date.UTC(1970, 11, 6), 0.25],
@@ -98,6 +154,7 @@ const viewModel = fromObject({
       },
       {
         name: 'Winter 2015-2016',
+        color: '#41AFF4',
         data: [
           [Date.UTC(1970, 10, 9), 0],
           [Date.UTC(1970, 10, 15), 0.23],
@@ -126,6 +183,7 @@ const viewModel = fromObject({
       },
       {
         name: 'Winter 2016-2017',
+        color: '#A8FF96',
         data: [
           [Date.UTC(1970, 9, 15), 0],
           [Date.UTC(1970, 9, 31), 0.09],

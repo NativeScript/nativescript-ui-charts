@@ -8,7 +8,7 @@ export function treemapHandler(treemapOptions) {
     alternateStartingDirection: 'number',
     cluster: 'HICluster',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     ignoreHiddenPoint: 'number',
     interactByLeaf: 'number',
     layoutAlgorithm: 'string',

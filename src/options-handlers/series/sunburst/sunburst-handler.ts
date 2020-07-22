@@ -9,7 +9,7 @@ export function sunburstHandler(sunburstOptions) {
     borderWidth: 'number',
     center: 'Array',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     fillColor: 'HIColor',
     levelIsConstant: 'number',
     levelSize: 'HILevelSize',

@@ -87,6 +87,13 @@ import { linkHandler } from "../link/link-handler";
 import { exportingHandler } from "../exporting/exporting-handler";
 import { frameHandler } from "../frame/frame-handler";
 import { options3dHandler } from "../options3d/options3d-handler";
+import { navigationHandler } from "../navigation/navigation-handler";
+import { annotationsOptionsHandler } from "../annotationsOptions/annotationsOptions-handler";
+import { animationOptionsObjectHandler } from "../animationOptionsObject/animationOptionsObject-handler";
+import { popupHandler } from "../popup/popup-handler";
+import { shapesHandler } from "../shapes/shapes-handler";
+import { buttonOptionsHandler } from "../buttonOptions/buttonOptions-handler";
+import { themeHandler } from "../theme/theme-handler";
 
 const seriesHandlers = {
   'HIArea': (options) => areaHandler(options),
@@ -146,7 +153,10 @@ export const typesMap = {
   'HIAccessibility': (options) => accessibilityHandler(options),
   'HIAlignObject': (options) => alignObjectHandler(options),
   // 'HIAnnotations': (options) => annotationsHandler(options),
+  'HIAnnotationsOptions': (options) => annotationsOptionsHandler(options),
+  'HIAnimationOptionsObject': (options) => animationOptionsObjectHandler(options),
   // 'HIBoost': (options) => boostHandler(options),
+  'HIButtonOptions': (options) => buttonOptionsHandler(options),
   // 'HICaption': (options) => captionHandler(options),
   'HIChart': (options) => chartHandler(options),
   'HICredits': (options) => creditsHandler(options),
@@ -167,22 +177,25 @@ export const typesMap = {
   'HILink': (options) => linkHandler(options),
   'HIMarker': (options) => markerHandler(options),
   // 'HILoading': (options) => loadingHandler(options),
-  // 'HINavigation': (options) => navigationHandler(options),
+  'HINavigation': (options) => navigationHandler(options),
   // 'HINoData': (options) => noDataHandler(options),
   'HIOptions3d': (options) => options3dHandler(options),
   // 'HIPane': (options) => paneHandler(options),
   'HIPanning': (options) => panningHandler(options),
   'HIPoint': (options) => pointHandler(options),
+  'HIPopup': (options) => popupHandler(options),
   'HIPlotOptions': (options) => plotOptionsHandler(options),
   // 'HIResponsive': (options) => responsiveHandler(options),
   'HIResetZoomButton': (options) => resetZoomButtonHandler(options),
   'HIScrollablePlotArea': (options) => scrollablePlotAreaHandler(options),
   'HISeries': (options) => seriesHandler(options),
+  'HIShapes': (options) => shapesHandler(options),
   'HIStackLabels': (options) => stackLabelsHandler(options),
   'HIStates': (options) => statesHandler(options),
   'HISubtitle': (options) => subtitleHandler(options),
   // 'HITime': (options) => timeHandler(options),
   'HITitle': (options) => titleHandler(options),
+  'HITheme': (options) => themeHandler(options),
   'HITooltip': (options) => tooltipHandler(options),
   'HIXAxis': (options) => xAxisHandler(options),
   'HIYAxis': (options) => yAxisHandler(options),

@@ -5,7 +5,7 @@ import { convertJSArrayToNative, optionsBuilder } from "../../helpers/helpers";
 export function itemHandler(itemOptions) {
   const itemSchema = {
     center: 'Array',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     endAngle: 'number',
     fillColor: 'HIColor',
     ignoreHiddenPoint: 'number',

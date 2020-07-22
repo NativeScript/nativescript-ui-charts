@@ -10,7 +10,7 @@ export function wordcloudHandler(wordcloudOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     edgeWidth: 'number',
     maxFontSize: 'number',
     minFontSize: 'number',

@@ -7,7 +7,7 @@ export function pieHandler(pieOptions) {
     borderColor: 'HIColor',
     borderWidth: 'number',
     center: 'Array',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     depth: 'number',
     endAngle: 'number',
     fillColor: 'HIColor',

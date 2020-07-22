@@ -8,7 +8,7 @@ export function sankeyHandler(sankeyOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     curveFactor: 'number',
     levels: 'HILevels', // array
     linkOpacity: 'number',

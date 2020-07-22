@@ -8,7 +8,7 @@ export function columnpyramidHandler(columnpyramidOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     groupPadding: 'number',
     grouping: 'number',
     maxPointWidth: 'number',

@@ -9,7 +9,7 @@ export function windbarbHandler(windbarbOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     dataGrouping: 'HIDataGrouping',
     depth: 'number',
     edgeColor: 'HIColor',

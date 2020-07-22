@@ -9,7 +9,7 @@ export function dependencywheelHandler(dependencywheelOptions) {
     center: 'Array',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     curveFactor: 'number',
     levels: 'HILevels', // array
     linkOpacity: 'number',

@@ -9,7 +9,7 @@ export function organizationHandler(organizationOptions) {
     borderWidth: 'number',
     centerInCategory: 'number',
     colorByPoint: 'number',
-    colors: 'HIColor', // array
+    colors: 'HIColor',
     hangingIndent: 'number',
     levels: 'HILevels', // array
     linkColor: 'HIColor',
