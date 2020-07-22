@@ -38,15 +38,47 @@ export function colorToString(color: any) {
 }
 
 export function toHIColor(color) {
-  if (color.linearGradient && color.stops) {
-    const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
-    return new HIColor({ 
-      linearGradient: NSDictionary.dictionaryWithObjectsForKeys(color.linearGradient, ["x1", "y1", "x2", "y2"]), 
-      stops: stops
-    });
+  if (color instanceof Array) {
+    const colorArray = [];
+    for (let i = 0; i < color.length; i++) {
+      const c = color[i];
+
+      if (c.radialGradient && c.stops) {
+        const stops = c.stops.map((stop, index) => [index, colorToString(stop)]);
+        colorArray.push(new HIColor({ 
+          radialGradient: NSDictionary.dictionaryWithObjectsForKeys(c.radialGradient, ["cx", "cy", "r"]), 
+          stops: stops
+        }));
+      } else if (c.linearGradient && c.stops) {
+        const stops = c.stops.map((stop, index) => [index, colorToString(stop)]);
+        colorArray.push(new HIColor({ 
+          linearGradient: NSDictionary.dictionaryWithObjectsForKeys(c.linearGradient, ["x1", "y1", "x2", "y2"]), 
+          stops: stops
+        }));
+      } else {
+        const _c = new Color(c);
+        colorArray.push(new HIColor(_c.ios) as any);
+      }
+    }
+
+    return convertJSArrayToNative(colorArray);
   } else {
-    const c = new Color(color);
-    return new HIColor(c.ios) as any;
+    if (color.radialGradient && color.stops) {
+      const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
+      return new HIColor({ 
+        radialGradient: NSDictionary.dictionaryWithObjectsForKeys(color.radialGradient, ["cx", "cy", "r"]), 
+        stops: stops
+      });
+    } else if (color.linearGradient && color.stops) {
+      const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
+      return new HIColor({ 
+        linearGradient: NSDictionary.dictionaryWithObjectsForKeys(color.linearGradient, ["x1", "y1", "x2", "y2"]), 
+        stops: stops
+      });
+    } else {
+      const c = new Color(color);
+      return new HIColor(c.ios) as any;
+    }
   }
 }
 

@@ -6,7 +6,12 @@ const viewModel = fromObject({
     chart: {
       type: 'spline',
       // backgroundColor: {
-      //   linearGradient: [0, 0, 0, 1], 
+      //   linearGradient: {
+      //     x1: 0,
+      //     y1: 0,
+      //     x2: 0,
+      //     y2: 1
+      //   }, 
       //   stops: ['rgba(132, 103, 144, 1)', 'rgba(163, 95, 103, 1)']
       // },
       // borderRadius: 6

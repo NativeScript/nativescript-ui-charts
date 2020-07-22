@@ -76,9 +76,17 @@ export function toHIColor(color) {
     const colorArray = [];
     for (let i = 0; i < color.length; i++) {
       const c = color[i];
-      if (c.linearGradient && c.stops) {
+
+      if (c.radialGradient && c.stops) {
+        const grad = c.radialGradient;
+        const gradient = new com.highsoft.highcharts.common.HIGradient(grad.cx, grad.cy, grad.r);
+        const stops = c.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
+        const stopslist = toLinkedList(stops);
+    
+        colorArray.push(com.highsoft.highcharts.common.HIColor.initWithRadialGradient(gradient, stopslist));
+      } else if (c.linearGradient && c.stops) {
         const grad = c.linearGradient;
-        const gradient = new com.highsoft.highcharts.common.HIGradient(grad[0], grad[1], grad[2], grad[3]);
+        const gradient = new com.highsoft.highcharts.common.HIGradient(grad.x1, grad.y1, grad.x2, grad.y2);
         const stops = c.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
         const stopslist = toLinkedList(stops);
     
@@ -91,9 +99,16 @@ export function toHIColor(color) {
 
     return convertJSArrayToNative(colorArray);
   } else {
-    if (color.linearGradient && color.stops) {
+    if (color.radialGradient && color.stops) {
+      const grad = color.radialGradient;
+      const gradient = new com.highsoft.highcharts.common.HIGradient(grad.cx, grad.cy, grad.r);
+      const stops = color.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
+      const stopslist = toLinkedList(stops);
+  
+      return com.highsoft.highcharts.common.HIColor.initWithRadialGradient(gradient, stopslist);
+    } else if (color.linearGradient && color.stops) {
       const grad = color.linearGradient;
-      const gradient = new com.highsoft.highcharts.common.HIGradient(grad[0], grad[1], grad[2], grad[3]);
+      const gradient = new com.highsoft.highcharts.common.HIGradient(grad.x1, grad.y1, grad.x2, grad.y2);
       const stops = color.stops.map((stop, i) => new com.highsoft.highcharts.common.HIStop(i, toHIColor(stop)))
       const stopslist = toLinkedList(stops);
   
