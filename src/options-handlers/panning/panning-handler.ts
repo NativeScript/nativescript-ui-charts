@@ -6,7 +6,7 @@ export function panningHandler(exportingOptions) {
   const exporting = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIPanning() : new HIPanning();
 
   const exportingSchema = {
-    enabled: 'number',
+    enabled:  isAndroid ? 'boolean' : 'number',
     type: 'string',
   };
 

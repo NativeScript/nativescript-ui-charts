@@ -16,7 +16,7 @@ export function tooltipHandler(tooltipOptions) {
     distance: 'number',
     enabled: 'number',
     followPointer: 'number',
-    followTouchMove: 'number',
+    followTouchMove: isAndroid ? 'boolean' : 'number',
     footerFormat: 'string',
     formatter: 'HIFunction',
     headerFormat: 'string',

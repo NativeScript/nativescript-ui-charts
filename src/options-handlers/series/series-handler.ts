@@ -58,7 +58,7 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
     selected: 'number',
     shadow: 'HIShadowOptionsObject',
     showCheckbox: 'number',
-    showInLegend: 'number',
+    showInLegend: isAndroid ? 'boolean' : 'number',
     skipKeyboardNavigation: 'number',
     softThreshold: 'number',
     stack: 'string',
