@@ -1,8 +1,8 @@
 import { UIChartsViewBase } from './ui-charts.common';
 import { optionsHandler } from './options-handlers/options-handler';
+import { Application } from '@nativescript/core';
 
 export class UIChartsView extends UIChartsViewBase {
-
     public onLoaded() {
         super.onLoaded();
 
@@ -20,24 +20,36 @@ export class UIChartsView extends UIChartsViewBase {
         super.onUnloaded();
     }
 
-    public disposeNativeView() {
-        super.disposeNativeView();
-    }
-
     /**
      * Initializes properties/listeners of the native view.
      */
     initNativeView(): void {
         // Attach the owner to nativeView.
         // When nativeView is tapped we get the owning JS object through this field.
-        (<any>this.nativeView).owner = this;
+        (<any>this.nativeView).owner = new WeakRef(this);
         (<any>this.nativeView).generateDefaultLayoutParams();
+        (<any>this)._orientationHandler = this.onOrientationChange.bind(this);
+        Application.on('orientationChanged', (<any>this)._orientationHandler);
         super.initNativeView();
     }
 
+    public disposeNativeView() {
+        Application.off('orientationChanged', (<any>this)._orientationHandler);
+        super.disposeNativeView();
+    }
+
+    onOrientationChange() {
+        setTimeout(() => {
+            const w = (<any>this).nativeView.owner.get();
+            if (w) {
+                // TODO: redraw the chart here to handle orientation change
+            }
+        });
+    }
+
     public setOptions(opts: any) {
-         const nativeview = (<any>this.nativeView);
-         nativeview.setOptions(opts);
+        const nativeview = (<any>this.nativeView);
+        nativeview.setOptions(opts);
     }
 
 

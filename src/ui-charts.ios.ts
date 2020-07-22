@@ -34,7 +34,7 @@ export class UIChartsView extends UIChartsViewBase {
     initNativeView(): void {
         // Attach the owner to nativeView.
         // When nativeView is tapped we get the owning JS object through this field.
-        (<any>this.nativeView).owner = this;
+        (<any>this.nativeView).owner = new WeakRef(this);
         super.initNativeView();
 
         // NSNotificationCenter.defaultCenter.addObserverForNameObjectQueueUsingBlock("valueChange", null, NSOperationQueue.mainQueue, this.onValueChange);
