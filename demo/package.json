@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.chartsdemo",
+    "id": "org.nativescript.chartsdemocore",
     "tns-android": {
       "version": "6.5.1"
     },
