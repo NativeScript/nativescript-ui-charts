@@ -15,7 +15,7 @@ export function sunburstHandler(sunburstOptions) {
     levelSize: 'HILevelSize',
     levels: 'HILevels', // array
     rootId: 'string',
-    size: 'any',
+    size: 'number',
     slicedOffset: 'number',
     startAngle: 'number',
     traverseUpButton: 'HITraverseUpButton'

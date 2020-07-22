@@ -56,6 +56,7 @@ export declare const typesMap: {
     'HICSSObject': (options: any) => any;
     'HIDateTimeLabelFormats': (options: any) => any;
     'HIDataLabels': (options: any) => java.util.ArrayList<any>;
+    'HIExporting': (options: any) => any;
     'HIFunction': (options: any) => com.highsoft.highcharts.core.HIFunction | HIFunction;
     'HILabel': (options: any) => any;
     'HILabels': (options: any) => any;
@@ -63,6 +64,7 @@ export declare const typesMap: {
     'HILegend': (options: any) => any;
     'HILink': (options: any) => any;
     'HIMarker': (options: any) => any;
+    'HIOptions3d': (options: any) => any;
     'HIPoint': (options: any) => any;
     'HIPlotOptions': (options: any) => any;
     'HIScrollablePlotArea': (options: any) => any;
@@ -75,4 +77,11 @@ export declare const typesMap: {
     'HIXAxis': (options: any) => java.util.ArrayList<any>;
     'HIYAxis': (options: any) => java.util.ArrayList<any>;
     'HIZAxis': (options: any) => java.util.ArrayList<any>;
+    'HIFrame': (options: any) => any;
+    'HIBack': (options: any) => any;
+    'HIBottom': (options: any) => any;
+    'HIFront': (options: any) => any;
+    'HILeft': (options: any) => any;
+    'HIRight': (options: any) => any;
+    'HITop': (options: any) => any;
 };

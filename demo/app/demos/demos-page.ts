@@ -2,7 +2,7 @@ import { fromObject } from '@nativescript/core/data/observable';
 
 const viewModel = fromObject({
   selectedType: 'Line',
-  chartTypes: ['Line', 'Area', 'Bar'],
+  chartTypes: ['Line', 'Area', 'Bar', '3D'],
   lineChart: [
     {
       name: 'Basic Line Chart',
@@ -43,6 +43,40 @@ const viewModel = fromObject({
     {
       name: 'Bar With Negative Stack Chart',
       route: 'demos/bar-charts/bar-negative-stack/bar-negative-stack-page',
+    },
+  ],
+  '3dChart': [
+    {
+      name: '3D Column Chart',
+      route: 'demos/3d-charts/3d-column/3d-column-page',
+    },
+    {
+      name: '3D Column Chart with Stacking and Grouping',
+      route: 'demos/3d-charts/3d-column-sg/3d-column-sg-page',
+    },
+    // doesn't render on Android currently
+    // {
+    //   name: '3D Cylinder Chart',
+    //   route: 'demos/3d-charts/3d-cylinder/3d-cylinder-page',
+    // },
+    {
+      name: '3D Donut Chart',
+      route: 'demos/3d-charts/3d-donut/3d-donut-page',
+    },
+    {
+      name: '3D Pie Chart',
+      route: 'demos/3d-charts/3d-pie/3d-pie-page',
+    },
+    // doesn't render on Android currently
+    // {
+    //   name: '3D Pyramid Chart',
+    //   route: 'demos/3d-charts/3d-pyramid/3d-pyramid-page',
+    // },
+
+    // TODO: implement dragging
+    {
+      name: '3D Scatter Chart (draggable)',
+      route: 'demos/3d-charts/3d-scatter-draggable/3d-scatter-draggable-page',
     },
   ],
   selectedSource: [],

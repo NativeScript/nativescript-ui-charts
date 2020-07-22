@@ -57,7 +57,9 @@ export function optionsBuilder(schema, options, containerObject) {
   for (const schemaKey of schemaKeys) {
     if ((<any>optionsKeys).includes(schemaKey)) {
       if (typeof typesMap[schema[schemaKey]] === 'function') {
-        containerObject[schemaKey] = typesMap[schema[schemaKey]](options[schemaKey]);
+        if (options[schemaKey] !== null && typeof options[schemaKey] !== 'undefined') {
+          containerObject[schemaKey] = typesMap[schema[schemaKey]](options[schemaKey]);
+        }
       } else {
         console.log('Handler for', schemaKey, schema[schemaKey], 'not implemented');
       }

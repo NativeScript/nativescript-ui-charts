@@ -12,7 +12,7 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
     className: 'string',
     clip: 'number',
     color: 'HIColor',
-    colorAxis: 'any',
+    colorAxis: 'number',
     colorIndex: 'number',
     colorKey: 'string',
     connectEnds: 'number',
@@ -53,7 +53,7 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
     pointDescriptionFormatter: 'HIFunction',
     pointInterval: 'number',
     pointIntervalUnit: 'string',
-    pointPlacement: 'any',
+    pointPlacement: 'number',
     pointStart: 'number',
     selected: 'number',
     shadow: 'HIShadowOptionsObject',
@@ -72,9 +72,9 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
     turboThreshold: 'number',
     type: 'string',
     visible: 'number',
-    xAxis: 'any',
+    xAxis: 'XAxis',
     xAxisDescription: 'string',
-    yAxis: 'any',
+    yAxis: 'YAxis',
     yAxisDescription: 'string',
     zIndex: 'number',
     zoneAxis: 'string',
@@ -89,7 +89,11 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
         const innerArray = [];
         for(let i = 0; i < item.length; i++) {
           if (i === 0) {
-            innerArray.push(new java.lang.Long(item[0]));
+            if (typeof item[0] === 'string') {
+              innerArray.push(item[0]);
+            } else {
+              innerArray.push(new java.lang.Long(item[0]));
+            }
           } else {
             innerArray.push(new java.lang.Double(item[i]));
           }

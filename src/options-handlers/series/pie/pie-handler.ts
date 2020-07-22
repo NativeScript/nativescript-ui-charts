@@ -12,9 +12,9 @@ export function pieHandler(pieOptions) {
     endAngle: 'number',
     fillColor: 'HIColor',
     ignoreHiddenPoint: 'number',
-    innerSize: 'any',
-    minSize: 'any',
-    size: 'any',
+    innerSize: 'number',
+    minSize: 'number',
+    size: 'number',
     slicedOffset: 'number',
     startAngle: 'number'
   };

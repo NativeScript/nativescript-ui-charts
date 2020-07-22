@@ -21,6 +21,12 @@ import { tooltipHandler } from "../tooltip/tooltip-handler";
 import { xAxisHandler } from "../xAxis/xAxis-handler";
 import { yAxisHandler } from "../yAxis/yAxis-handler";
 import { zAxisHandler } from "../zAxis/zAxis-handler";
+import { backHandler } from '../frame/back/back-handler';
+import { bottomHandler } from '../frame/bottom/bottom-handler';
+import { frontHandler } from '../frame/front/front-handler';
+import { leftHandler } from '../frame/left/left-handler';
+import { rightHandler } from '../frame/right/right-handler';
+import { topHandler } from '../frame/top/top-handler';
 
 // Series Handler imports
 import { areaHandler } from '../series/area/area-handler';
@@ -76,6 +82,8 @@ import { xrangeHandler } from '../series/xrange/xrange-handler';
 import { layoutAlgorithmHandler } from "../layoutAlgorithm/layoutAlgorithm-handler";
 import { linkHandler } from "../link/link-handler";
 import { exportingHandler } from "../exporting/exporting-handler";
+import { frameHandler } from "../frame/frame-handler";
+import { options3dHandler } from "../options3d/options3d-handler";
 
 const seriesHandlers = {
   'HIArea': (options) => areaHandler(options),
@@ -157,6 +165,7 @@ export const typesMap = {
   // 'HILoading': (options) => loadingHandler(options),
   // 'HINavigation': (options) => navigationHandler(options),
   // 'HINoData': (options) => noDataHandler(options),
+  'HIOptions3d': (options) => options3dHandler(options),
   // 'HIPane': (options) => paneHandler(options),
   'HIPoint': (options) => pointHandler(options),
   'HIPlotOptions': (options) => plotOptionsHandler(options),
@@ -172,5 +181,16 @@ export const typesMap = {
   'HIXAxis': (options) => xAxisHandler(options),
   'HIYAxis': (options) => yAxisHandler(options),
   'HIZAxis': (options) => zAxisHandler(options),
+
+  // Frame handlers
+  'HIFrame': (options) => frameHandler(options),
+  'HIBack': (options) => backHandler(options),
+  'HIBottom': (options) => bottomHandler(options),
+  'HIFront': (options) => frontHandler(options),
+  'HILeft': (options) => leftHandler(options),
+  'HIRight': (options) => rightHandler(options),
+  'HITop': (options) => topHandler(options),
+
+  // Series handlers
   ...seriesHandlers
 };

@@ -34,7 +34,7 @@ export function dataLabelsHandler(dataLabelsOptions) {
     linkTextPath: 'HILinkTextPath',
     nodeFormat: 'string',
     nodeFormatter: 'HIFunction',
-    nullFormat: 'any',
+    nullFormat: 'number',
     nullFormatter: 'HIFunction',
     overflow: 'string',
     padding: 'number',

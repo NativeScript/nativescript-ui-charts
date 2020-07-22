@@ -9,12 +9,12 @@ export function itemHandler(itemOptions) {
     endAngle: 'number',
     fillColor: 'HIColor',
     ignoreHiddenPoint: 'number',
-    innerSize: 'any',
+    innerSize: 'number',
     itemPadding: 'number',
     layout: 'string',
-    minSize: 'any',
+    minSize: 'number',
     rows: 'number',
-    size: 'any',
+    size: 'number',
     startAngle: 'number'
   };
 

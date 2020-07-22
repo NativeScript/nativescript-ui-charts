@@ -16,7 +16,7 @@ export function labelsHandler(labelsOptions) {
     borderWidth: 'number',
     className: 'string',
     crop: 'number',
-    distance: 'any',
+    distance: 'number',
     enabled: 'number',
     format: 'string',
     formatter: 'HIFunction',

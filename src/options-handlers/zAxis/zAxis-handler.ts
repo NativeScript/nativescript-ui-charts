@@ -36,7 +36,7 @@ export function zAxisHandler(zAxisOptions) {
     minorGridLineDashStyle: 'string',
     minorGridLineWidth: 'number',
     minorTickColor: 'HIColor',
-    minorTickInterval: 'any',
+    minorTickInterval: 'number',
     minorTickLength: 'number',
     minorTickPosition: 'string',
     minorTickWidth: 'number',

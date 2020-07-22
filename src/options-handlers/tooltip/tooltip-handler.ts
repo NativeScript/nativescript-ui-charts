@@ -11,7 +11,7 @@ export function tooltipHandler(tooltipOptions) {
     borderRadius: 'number',
     borderWidth: 'number',
     className: 'string',
-    clusterFormat: 'any',
+    clusterFormat: 'string',
     dateTimeLabelFormats: 'HIDateTimeLabelFormats',
     distance: 'number',
     enabled: 'number',

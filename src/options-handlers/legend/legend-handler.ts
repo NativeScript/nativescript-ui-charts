@@ -43,7 +43,7 @@ export function legendHandler(legendOptions) {
     title: 'HITitle',
     useHTML: 'number',
     verticalAlign: 'string',
-    width: 'any',
+    width: 'number',
     x: 'number',
     y: 'number'
   };
