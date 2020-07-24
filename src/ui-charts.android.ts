@@ -50,13 +50,17 @@ export class UIChartsView extends UIChartsViewBase {
     public setOptions(opts: any) {
         this.options = opts;
         const hiOptions = optionsHandler(this.options);
-        this.nativeView.setOptions(hiOptions);
+        if (this.nativeView) {
+            this.nativeView.setOptions(hiOptions);
+        }
     }
 
     public updateOptions(opts) {
         this.options = opts;
         const hiOptions = optionsHandler(this.options);
-        this.nativeView.update(hiOptions);
+        if (this.nativeView) {
+            this.nativeView.update(hiOptions);
+        }
     }
 
     public setExtremes(newMin: any, newMax: any, xAxisIndex = 0) {

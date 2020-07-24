@@ -6,7 +6,44 @@ let viewModel;
 export function onNavigatingTo(args: NavigatedData) {
   viewModel = fromObject({
     loading: true,
-    chartOptions: null,
+
+    // onAndroid it is required for you to pass a series skeleton if the data
+    // will be loaded asynchronously
+    chartOptions: {
+      legend: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
+      },
+      yAxis: {
+        title: {
+          text: '',
+        }
+      },
+      series: [
+        {
+          name: 'Installation',
+          data: [],
+        },
+        {
+          name: 'Manufacturing',
+          data: [],
+        },
+        {
+          name: 'Sales & Distribution',
+          data: [],
+        },
+        {
+          name: 'Project Development',
+          data: [],
+        },
+        {
+          name: 'Other',
+          data: [],
+        },
+      ],
+    },
   });
   const page = <Page>args.object;
 
@@ -47,6 +84,10 @@ export function onNavigatingTo(args: NavigatedData) {
         layout: 'horizontal',
         align: 'center',
         verticalAlign: 'bottom',
+        enabled: true
+      },
+      credits: {
+        enabled: true
       },
   
       plotOptions: {

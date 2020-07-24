@@ -84,7 +84,7 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
   const series = isAndroid ? seriesSubClass || new com.highsoft.highcharts.common.hichartsclasses.HISeries() : seriesSubClass || new HISeries();
   const sOpts = seriesOptions;
   if (sOpts.data && isAndroid) {
-    if (sOpts.data[0] !== null && sOpts.data[0].length) {
+    if (sOpts.data[0] !== null && typeof sOpts.data[0] !== 'undefined' && sOpts.data[0].length) {
       const data = sOpts.data.map(item => {
         const innerArray = [];
         for(let i = 0; i < item.length; i++) {
