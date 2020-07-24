@@ -5,7 +5,7 @@ const viewModel = fromObject({
   chartTypes: ['Line', 'Area', 'Bar', 'Column', '3D'],
   lineChart: [
     {
-      name: 'Basic Line Chart',
+      name: 'Basic Line Chart (async data)',
       route: 'demos/line-charts/basic-line/basic-line-page',
     },
     {

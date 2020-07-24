@@ -7,7 +7,20 @@ export class UIChartsViewBase extends View {
 
 export const optionsProperty = new Property<UIChartsViewBase, {}>({
   name: 'options',
-  defaultValue: {},
-  affectsLayout: true
+  defaultValue: {
+    title: {
+      text: ''
+    },
+    exporting: {
+      enabled: false
+    },
+    credits: {
+      enabled: false
+    }
+  },
+  affectsLayout: true,
+  valueChanged: (target, oldValue, newValue) => {
+    (<any>target).updateOptions(newValue)
+  }
 });
 optionsProperty.register(UIChartsViewBase);
