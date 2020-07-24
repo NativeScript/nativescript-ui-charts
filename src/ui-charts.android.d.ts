@@ -7,5 +7,6 @@ export declare class UIChartsView extends UIChartsViewBase {
     disposeNativeView(): void;
     onOrientationChange(): void;
     setOptions(opts: any): void;
+    updateOptions(opts: any): void;
     setExtremes(newMin: any, newMax: any, xAxisIndex?: number): void;
 }
