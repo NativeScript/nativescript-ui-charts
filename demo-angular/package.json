@@ -35,8 +35,8 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "~10.0.0",
-    "@nativescript/webpack": "rc",
     "@nativescript/types": "rc",
+    "@nativescript/webpack": "rc",
     "@ngtools/webpack": "~10.0.0",
     "typescript": "~3.9.0"
   },

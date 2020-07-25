@@ -3,8 +3,10 @@ import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./item/items.component";
 import { UIChartsViewModule } from "@nativescript/ui-charts/angular";
+
+import { DemosComponent } from "./demos/demos.component";
+import { BasicLineComponent } from "./demos/line-charts/basic-line/basic-line.component";
 
 @NgModule({
     bootstrap: [
@@ -17,7 +19,8 @@ import { UIChartsViewModule } from "@nativescript/ui-charts/angular";
     ],
     declarations: [
         AppComponent,
-        ItemsComponent
+        DemosComponent,
+        BasicLineComponent
     ],
     providers: [],
     schemas: [

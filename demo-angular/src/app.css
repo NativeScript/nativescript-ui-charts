@@ -23,3 +23,11 @@ The following CSS rule changes the font size of all Buttons that have the
 Button.-primary {
     font-size: 18;
 }
+.filter-pill {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    padding: 5 10;
+    margin: 5;
+    border-radius: 10;
+  }
+  

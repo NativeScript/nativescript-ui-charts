@@ -1,0 +1,8 @@
+<ActionBar backgroundColor="black">
+  <Label text="Basic Line Chart" color="white"></Label>
+</ActionBar>
+
+<GridLayout rows="*, auto">
+  <UIChartsView row="0" [options]="chartOptions"></UIChartsView>
+  <Button class="btn -primary" row="1" text="Change Data" (tap)="onDataChange($event)" ></Button>
+</GridLayout>
