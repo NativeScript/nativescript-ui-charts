@@ -1,27 +1,28 @@
 {
-    "compilerOptions": {
-        "target": "es2015",
-        "module": "commonjs",
-        "declaration": true,
-        "removeComments": true,
-        "noLib": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "skipLibCheck": true,
-        "lib": ["ES2017", "es6", "dom"],
-        "sourceMap": true,
-        "pretty": true,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "noEmitHelpers": true,
-        "noEmitOnError": false,
-        "noImplicitAny": false,
-        "noImplicitReturns": true,
-        "noImplicitUseStrict": false,
-        "noFallthroughCasesInSwitch": true
-    },
-    "exclude": [
-        "node_modules"
-    ],
-    "compileOnSave": false
+  "compilerOptions": {
+      "noEmitHelpers": true,
+      "target": "es5",
+      "module": "commonjs",
+      "declaration": true,
+      "noImplicitAny": false,
+      "noImplicitUseStrict": true,
+      "experimentalDecorators": true,
+      "diagnostics": true,
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "removeComments": false,
+      "noEmitOnError": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
+      "lib": [
+          "es6",
+          "dom"
+      ]
+  },
+  "exclude": [
+      "node_modules",
+      "node_modules/@nativescript/types"
+  ]
 }

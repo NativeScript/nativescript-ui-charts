@@ -1,9 +1,13 @@
 import { UIChartsViewBase } from './ui-charts.common';
 export declare class UIChartsView extends UIChartsViewBase {
+    private _delegate;
     onLoaded(): void;
     createNativeView(): any;
     onUnloaded(): void;
     disposeNativeView(): void;
+    /**
+     * Initializes properties/listeners of the native view.
+     */
     initNativeView(): void;
     setOptions(opts: any): void;
     updateOptions(opts: any): void;

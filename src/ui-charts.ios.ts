@@ -2,7 +2,7 @@ import { UIChartsViewBase } from './ui-charts.common';
 import { optionsHandler } from './options-handlers/options-handler';
 
 export class UIChartsView extends UIChartsViewBase {
-
+    private _delegate: HighchartsViewDelegateImpl;
     public onLoaded() {
         super.onLoaded();
 
@@ -14,7 +14,9 @@ export class UIChartsView extends UIChartsViewBase {
 
     public createNativeView() {
         const chartView = new HIChartView({ frame: CGRectMake(0, 0, 200, 200) }) as any;
-        chartView.delegate = new HighchartsViewDelegateImpl();
+        // always retain delegate on owner class to ensure it doesn't inadvertently get garbage collected
+        this._delegate = new HighchartsViewDelegateImpl();
+        chartView.delegate = this._delegate;
         const currentVC = getVisibleViewController();
         chartView.viewController = currentVC;
         return chartView;
@@ -43,23 +45,29 @@ export class UIChartsView extends UIChartsViewBase {
     public setOptions(opts: any) {
         this.options = opts;
         const hiOptions = optionsHandler(this.options);
-        this.nativeView.options = hiOptions;
+        if (this.nativeView) {
+          this.nativeView.options = hiOptions;
+        }
     }
 
     public updateOptions(opts) {
         this.options = opts;
         const hiOptions = optionsHandler(this.options);
-        this.nativeView.updateRedrawOneToOneAnimation(hiOptions, 1, 1, new HIAnimationOptionsObject());
+        if (this.nativeView) {
+          this.nativeView.updateRedrawOneToOneAnimation(hiOptions, 1, 1, new HIAnimationOptionsObject());
+        }
     }
 
     public setExtremes(newMin: any, newMax: any, xAxisIndex = 0) {
         const nativeview = (<any>this.nativeView);
-        const opts = (nativeview.options as HIOptions);
-        const xaxis = opts.xAxis[xAxisIndex];
-        xaxis.min = newMin;
-        xaxis.max = newMax;
-        nativeview.zoomOut();
-        nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
+        if (nativeview) {
+          const opts = (nativeview.options as HIOptions);
+          const xaxis = opts.xAxis[xAxisIndex];
+          xaxis.min = newMin;
+          xaxis.max = newMax;
+          nativeview.zoomOut();
+          nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
+        }
     }
 }
 

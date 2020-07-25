@@ -3,6 +3,9 @@ export declare class UIChartsView extends UIChartsViewBase {
     onLoaded(): void;
     createNativeView(): any;
     onUnloaded(): void;
+    /**
+     * Initializes properties/listeners of the native view.
+     */
     initNativeView(): void;
     disposeNativeView(): void;
     onOrientationChange(): void;
