@@ -1,6 +1,6 @@
 {
 	"name": "@nativescript/ui-charts",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"description": "Nativescript wrapper for Highcharts iOS and Android SDKs",
 	"main": "ui-charts",
 	"typings": "index.d.ts",
@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NativeScript/ui-charts.git"
+		"url": "git+https://github.com/NativeScript/nativescript-ui-charts.git"
 	},
 	"scripts": {
 		"tsc": "npm i && tsc",
@@ -52,10 +52,10 @@
 		}
 	],
 	"bugs": {
-		"url": "https://github.com/NativeScript/ui-charts/issues"
+		"url": "https://github.com/NativeScript/nativescript-ui-charts/issues"
 	},
 	"license": "Apache-2.0",
-	"homepage": "https://github.com/NativeScript/ui-charts",
+	"homepage": "https://github.com/NativeScript/nativescript-ui-charts",
 	"devDependencies": {
 		"@nativescript/core": "rc",
 		"nativescript-vue": "^2.7.0",

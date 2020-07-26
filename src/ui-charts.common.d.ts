@@ -1,5 +1,5 @@
-import { View } from '@nativescript/core';
+import { View, Property } from '@nativescript/core';
 export declare class UIChartsViewBase extends View {
     options: any;
 }
-export declare const optionsProperty: any;
+export declare const optionsProperty: Property<UIChartsViewBase, {}>;
