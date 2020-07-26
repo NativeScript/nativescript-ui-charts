@@ -12,7 +12,7 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
-    "@nativescript/core": "6.5.9",
+    "@nativescript/core": "^7.0.0-rc.24",
     "@nativescript/theme": "~2.3.0",
     "@nativescript/ui-charts": "file:../src"
   },

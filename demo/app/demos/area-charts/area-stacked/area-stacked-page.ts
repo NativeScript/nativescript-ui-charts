@@ -24,7 +24,9 @@ const viewModel = fromObject({
         text: 'Billions',
       },
       labels: {
-        formatter: `function () { return this.value / 1000; }`,
+        formatter: function () {
+          return this.value / 1000;
+        },
       },
     },
     tooltip: {

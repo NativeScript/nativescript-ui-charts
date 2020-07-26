@@ -42,7 +42,12 @@ const viewModel = fromObject({
           lineColor: '#ffffff',
         },
         accessibility: {
-          pointDescriptionFormatter: `function(point){function round(x){return Math.round(x*100)/100}return(point.index+1+', '+point.category+', '+point.y+' millions, '+round(point.percentage)+'%, '+point.series.name)}`,
+          pointDescriptionFormatter: function(point){
+            function round(x) {
+              return Math.round(x*100)/100
+            }
+            return(point.index+1+', '+point.category+', '+point.y+' millions, '+round(point.percentage)+'%, '+point.series.name)
+          },
         },
       },
     },
