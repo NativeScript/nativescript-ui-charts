@@ -4,7 +4,7 @@ import { fromObject } from '@nativescript/core/data/observable';
 const viewModel = fromObject({
   chartOptions: {
     chart: {
-      type: 'spline',
+      type: 'areaspline',
       backgroundColor: {
         linearGradient: {
           x1: 0,
@@ -201,12 +201,12 @@ const viewModel = fromObject({
           [Date.UTC(1971, 0, 22), 0.4],
           [Date.UTC(1971, 0, 25), 0.4],
           [Date.UTC(1971, 0, 28), 0.37],
-          [Date.UTC(1971, 0, 31), 0.43],
-          [Date.UTC(1971, 1, 4), 0.42],
-          [Date.UTC(1971, 1, 7), 0.39],
-          [Date.UTC(1971, 1, 10), 0.39],
-          [Date.UTC(1971, 1, 13), 0.39],
-          [Date.UTC(1971, 1, 16), 0.39],
+          [Date.UTC(1971, 0, 31), null],
+          [Date.UTC(1971, 1, 4), null],
+          [Date.UTC(1971, 1, 7), null],
+          [Date.UTC(1971, 1, 10), null],
+          [Date.UTC(1971, 1, 13), null],
+          [Date.UTC(1971, 1, 16), null],
           [Date.UTC(1971, 1, 19), 0.35],
           [Date.UTC(1971, 1, 22), 0.45],
           [Date.UTC(1971, 1, 25), 0.62],

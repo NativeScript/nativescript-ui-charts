@@ -1,5 +1,5 @@
 import { isAndroid } from '@nativescript/core';
-import { optionsBuilder, toArrayList, convertJSArrayToNative } from '../helpers/helpers';
+import { optionsBuilder, toArrayList, convertJSArrayToNative, fromJSToNativePrimitive } from '../helpers/helpers';
 
 export function seriesHandler(seriesOptions, seriesSubClass?) {
   const seriesSchema = {
@@ -95,7 +95,7 @@ export function seriesHandler(seriesOptions, seriesSubClass?) {
               innerArray.push(new java.lang.Long(item[0]));
             }
           } else {
-            innerArray.push(new java.lang.Double(item[i]));
+            innerArray.push(fromJSToNativePrimitive(item[i]));
           }
         }
 

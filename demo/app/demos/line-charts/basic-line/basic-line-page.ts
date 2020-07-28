@@ -149,7 +149,7 @@ export function changeData(args) {
       },
       {
         name: 'Project Development',
-        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+        data: [ 7988, 12169, 15112, 22452, 34400, 34227,null, null,],
       },
       {
         name: 'Other',
