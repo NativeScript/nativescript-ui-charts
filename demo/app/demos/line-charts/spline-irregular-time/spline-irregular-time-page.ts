@@ -4,7 +4,7 @@ import { fromObject } from '@nativescript/core/data/observable';
 const viewModel = fromObject({
   chartOptions: {
     chart: {
-      type: 'areaspline',
+      type: 'spline',
       backgroundColor: {
         linearGradient: {
           x1: 0,
