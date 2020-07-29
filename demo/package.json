@@ -8,6 +8,9 @@
       "version": "6.5.1"
     }
   },
+  "scripts": {
+    "publish.android.apk": "tns build android --no-hmr --env.uglify --env.production --release --key-store-path 'charts.keystore' --key-store-password charts --key-store-alias char --key-store-alias-password charts --copy-to charts_release.apk"
+  },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
