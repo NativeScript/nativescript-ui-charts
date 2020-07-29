@@ -20,6 +20,7 @@ import { statesHandler } from "../states/states-handler";
 import { styleHandler } from "../style/style-handler";
 import { subtitleHandler } from "../subtitle/subtitle-handler";
 import { titleHandler } from "../title/title-handler";
+import { timeHandler } from "../time/time-handler";
 import { tooltipHandler } from "../tooltip/tooltip-handler";
 import { xAxisHandler } from "../xAxis/xAxis-handler";
 import { yAxisHandler } from "../yAxis/yAxis-handler";
@@ -193,7 +194,7 @@ export const typesMap = {
   'HIStackLabels': (options) => stackLabelsHandler(options),
   'HIStates': (options) => statesHandler(options),
   'HISubtitle': (options) => subtitleHandler(options),
-  // 'HITime': (options) => timeHandler(options),
+  'HITime': (options) => timeHandler(options),
   'HITitle': (options) => titleHandler(options),
   'HITheme': (options) => themeHandler(options),
   'HITooltip': (options) => tooltipHandler(options),
