@@ -2,8 +2,6 @@ import { optionsBuilder, convertJSArrayToNative } from "../helpers/helpers";
 import { isAndroid } from "@nativescript/core";
 
 export function plotLinesHandler(plotLineOptions) {
-  const plotLines = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIPlotLines() : new HIPlotLines();
-
   const plotLinesSchema = {
     className: 'string',
     color: 'HIColor',
