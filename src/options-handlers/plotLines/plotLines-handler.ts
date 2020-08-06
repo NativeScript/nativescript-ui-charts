@@ -20,13 +20,13 @@ export function plotLinesHandler(plotLineOptions) {
     const seriesArr = [];
 
     for (const opts of plotLineOptions) {
-      const plotBand = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIPlotBands() : new HIPlotBands();
+      const plotBand = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIPlotLines() : new HIPlotLines();
       seriesArr.push(optionsBuilder(plotLinesSchema, opts, plotBand));
     }
 
     return convertJSArrayToNative(seriesArr);
   } else {
-    const plotBand = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIPlotBands() : new HIPlotBands();
+    const plotBand = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIPlotLines() : new HIPlotLines();
     return optionsBuilder(plotLinesSchema, plotLineOptions, plotBand);
   }
 }
