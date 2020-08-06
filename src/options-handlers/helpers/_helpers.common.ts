@@ -5,12 +5,15 @@ import { creditsHandler } from "../credits/credits-handler";
 import { dataLabelsHandler } from "../dataLabels/dataLabels-handler";
 import { dateTimeLabelFormatsHandler } from "../dateTimeLabelFormats/dateTimeLabelFormats-handler";
 import { functionHandler } from "../function/function-handler";
+import { hoverHandler } from "../hover/hover-handler";
 import { labelHandler } from "../label/label-handler";
 import { labelsHandler } from "../labels/labels-handler";
 import { legendHandler } from "../legend/legend-handler";
 import { markerHandler } from "../marker/marker-handler";
 import { panningHandler } from "../panning/panning-handler";
 import { plotOptionsHandler } from "../plotOptions/plotOptions-handler";
+import { plotBandsHandler } from "../plotBands/plotBands-handler";
+import { plotLinesHandler } from "../plotLines/plotLines-handler";
 import { pointHandler } from "../point/point-handler";
 import { resetZoomButtonHandler } from "../resetZoomButton/resetZoomButton-handler";
 import { scrollablePlotAreaHandler } from "../scrollablePlotArea/scrollablePlotArea-handler";
@@ -171,6 +174,7 @@ export const typesMap = {
   // 'HIDrilldown': (options) => drilldownHandler(options),
   'HIExporting': (options) => exportingHandler(options),
   'HIFunction': (options) => functionHandler(options),
+  'HIHover': (options) => hoverHandler(options),
   'HILabel': (options) => labelHandler(options),
   'HILabels': (options) => labelsHandler(options),
   'HILayoutAlgorithm': (options) => layoutAlgorithmHandler(options),
@@ -186,6 +190,8 @@ export const typesMap = {
   'HIPoint': (options) => pointHandler(options),
   'HIPopup': (options) => popupHandler(options),
   'HIPlotOptions': (options) => plotOptionsHandler(options),
+  'HIPlotBands': (options) => plotBandsHandler(options),
+  'HIPlotLines': (options) => plotLinesHandler(options),
   // 'HIResponsive': (options) => responsiveHandler(options),
   'HIResetZoomButton': (options) => resetZoomButtonHandler(options),
   'HIScrollablePlotArea': (options) => scrollablePlotAreaHandler(options),

@@ -1,1 +1,1 @@
-export declare function panningHandler(exportingOptions: any): any;
+export declare function panningHandler(panningOptions: any): any;
