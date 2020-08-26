@@ -16,6 +16,10 @@ const viewModel = fromObject({
       name: 'Time data with irregular intervals (styled)',
       route: 'demos/line-charts/spline-irregular-time/spline-irregular-time-page',
     },
+    {
+      name: 'Dynamic chart height',
+      route: 'demos/line-charts/dynamic-chart-height/dynamic-chart-height-page',
+    },
   ],
   areaChart: [
     {

@@ -62,6 +62,7 @@ export declare const typesMap: {
     HIDataLabels: (options: any) => java.util.ArrayList<any>;
     HIExporting: (options: any) => any;
     HIFunction: (options: any) => com.highsoft.highcharts.core.HIFunction | HIFunction;
+    HIHover: (options: any) => any;
     HILabel: (options: any) => any;
     HILabels: (options: any) => any;
     HILayoutAlgorithm: (options: any) => any;
@@ -74,6 +75,8 @@ export declare const typesMap: {
     HIPoint: (options: any) => any;
     HIPopup: (options: any) => any;
     HIPlotOptions: (options: any) => any;
+    HIPlotBands: (options: any) => any;
+    HIPlotLines: (options: any) => any;
     HIResetZoomButton: (options: any) => any;
     HIScrollablePlotArea: (options: any) => any;
     HISeries: (options: any) => any;
@@ -81,6 +84,7 @@ export declare const typesMap: {
     HIStackLabels: (options: any) => any;
     HIStates: (options: any) => any;
     HISubtitle: (options: any) => any;
+    HITime: (options: any) => any;
     HITitle: (options: any) => any;
     HITheme: (options: any) => any;
     HITooltip: (options: any) => any;

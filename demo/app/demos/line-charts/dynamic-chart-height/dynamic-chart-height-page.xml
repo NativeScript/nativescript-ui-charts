@@ -1,0 +1,19 @@
+<Page
+    navigatingTo="onNavigatingTo" 
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:uc="@nativescript/ui-charts">
+    
+    <ActionBar backgroundColor="black">
+        <Label text="Basic Line Chart (async data)"></Label>
+        <NavigationButton android.systemIcon="ic_menu_back" tap="goBack" />
+    </ActionBar>
+    
+    <GridLayout>
+        <GridLayout id="main" rows="*, auto, auto, auto">
+            <uc:UIChartsView row="0" id="chartView" height="{{ chartHeight }}" options="{{ chartOptions, chartOptions }}"  />
+            <Button row="1" class="btn -primary" margin="0 0 5 0" padding="0" text="Set Height to 200" tap="setHeight" newHeight="200" />
+            <Button row="2" class="btn -primary" margin="0 0 5 0" padding="0" text="Set Height to 300" tap="setHeight" newHeight="300" />
+            <Button row="3" class="btn -primary" margin="0 0 5 0" padding="0" text="Set Height to max" tap="setHeight" newHeight="100%" />
+        </GridLayout>
+    </GridLayout>
+</Page>
