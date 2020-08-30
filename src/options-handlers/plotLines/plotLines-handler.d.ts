@@ -1,1 +1,1 @@
-export declare function plotLinesHandler(plotLinesOptions: any): any;
+export declare function plotLinesHandler(plotLineOptions: any): any;
