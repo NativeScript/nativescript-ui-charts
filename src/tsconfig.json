@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
       "noEmitHelpers": true,
-      "target": "es5",
-      "module": "commonjs",
+      "target": "es2017",
+      "module": "esnext",
       "declaration": true,
       "noImplicitAny": false,
       "noImplicitUseStrict": true,
@@ -17,12 +17,14 @@
       "skipLibCheck": true,
       "skipDefaultLibCheck": true,
       "lib": [
-          "es6",
+          "es2017",
           "dom"
+      ],
+      "plugins": [
+        { "transform": "@nativescript/webpack/transformers/ns-transform-native-classes", "type": "raw" }
       ]
   },
   "exclude": [
-      "node_modules",
-      "node_modules/@nativescript/types"
+      "node_modules"
   ]
 }

@@ -71,6 +71,7 @@ export class UIChartsView extends UIChartsViewBase {
     }
 }
 
+@NativeClass()
 class HighchartsViewDelegateImpl
     extends NSObject // native delegates mostly always extend NSObject
     implements HIChartViewDelegate {
