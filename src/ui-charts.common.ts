@@ -1,24 +1,14 @@
 import { View, Property } from '@nativescript/core';
 export class UIChartsViewBase extends View {
   options: any;
+  events = {
+    chartLoaded: 'chartLoaded'
+  };
 }
 
 export const optionsProperty = new Property<UIChartsViewBase, {}>({
   name: 'options',
-  defaultValue: {
-    title: {
-      text: ''
-    },
-    exporting: {
-      enabled: false
-    },
-    credits: {
-      enabled: false
-    }
-  },
-  affectsLayout: true,
-  valueChanged: (target, oldValue, newValue) => {
-    (<any>target).updateOptions(newValue)
-  }
+  defaultValue: {},
+  affectsLayout: true
 });
 optionsProperty.register(UIChartsViewBase);
