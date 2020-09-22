@@ -91,7 +91,8 @@ export function optionsBuilder(schema, options, containerObject) {
   const optionsKeys = Object.keys(options);
 
   for (const schemaKey of schemaKeys) {
-    if (schemaKey !== 'enabled') { // ios does not like enabled being set on HiOptions
+    // certain properties, ios does not like being set on HiOptions
+    if (!['enabled', 'connectorAllowed', 'allowOverlap', 'shared', 'useHTML', 'floating', 'split'].includes(schemaKey)) { 
       if ((<any>optionsKeys).includes(schemaKey)) {
         if (typeof typesMap[schema[schemaKey]] === 'function') {
           if (options[schemaKey] !== null && typeof options[schemaKey] !== 'undefined') {

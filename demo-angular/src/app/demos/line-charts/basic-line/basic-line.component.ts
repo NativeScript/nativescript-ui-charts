@@ -8,41 +8,7 @@ import { UIChartsView } from "@nativescript/ui-charts";
 export class BasicLineComponent implements OnInit {
   chartOptions: any; 
   private _chart: UIChartsView;
-  // {
-  //   legend: {
-  //     enabled: false
-  //   },
-  //   credits: {
-  //     enabled: false
-  //   },
-  //   yAxis: {
-  //     title: {
-  //       text: '',
-  //     }
-  //   },
-  //   series: [
-  //     {
-  //       name: 'Installation',
-  //       data: [],
-  //     },
-  //     {
-  //       name: 'Manufacturing',
-  //       data: [],
-  //     },
-  //     {
-  //       name: 'Sales & Distribution',
-  //       data: [],
-  //     },
-  //     {
-  //       name: 'Project Development',
-  //       data: [],
-  //     },
-  //     {
-  //       name: 'Other',
-  //       data: [],
-  //     },
-  //   ],
-  // };
+ 
   constructor() { 
     this.chartOptions = {
       title: {
@@ -115,12 +81,6 @@ export class BasicLineComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    // setTimeout(() => {
-      
-    // }, 2000);
-  }
-
   onDataChange(args) {
     const cOpts = this.chartOptions;
     if (cOpts.title.text === 'Title Changed') {
@@ -176,7 +136,6 @@ export class BasicLineComponent implements OnInit {
   }
 
   loaded(args) {
-    console.log(args.object)
     this._chart = args.object;
     this._chart.setOptions(this.chartOptions);
   }

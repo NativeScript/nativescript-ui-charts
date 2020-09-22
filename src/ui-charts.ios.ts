@@ -85,7 +85,7 @@ class HighchartsViewDelegateImpl
     }
 
     chartViewDidLoad(chart) {
-        console.log("HighchartsViewDelegateImpl Did load chart:", chart)
+        // console.log("HighchartsViewDelegateImpl Did load chart:", chart)
         const owner = this._owner.get();
         if (owner) {
           owner.notify({
