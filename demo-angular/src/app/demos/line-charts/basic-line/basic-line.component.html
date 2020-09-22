@@ -3,6 +3,6 @@
 </ActionBar>
 
 <GridLayout rows="*, auto">
-  <UIChartsView row="0" [options]="chartOptions"></UIChartsView>
+  <UIChartsView row="0" (loaded)="loaded($event)"></UIChartsView>
   <Button class="btn -primary" row="1" text="Change Data" (tap)="onDataChange($event)" ></Button>
 </GridLayout>

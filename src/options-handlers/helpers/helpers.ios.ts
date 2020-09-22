@@ -91,13 +91,15 @@ export function optionsBuilder(schema, options, containerObject) {
   const optionsKeys = Object.keys(options);
 
   for (const schemaKey of schemaKeys) {
-    if ((<any>optionsKeys).includes(schemaKey)) {
-      if (typeof typesMap[schema[schemaKey]] === 'function') {
-        if (options[schemaKey] !== null && typeof options[schemaKey] !== 'undefined') {
-          containerObject[schemaKey] = typesMap[schema[schemaKey]](options[schemaKey]);
+    if (schemaKey !== 'enabled') { // ios does not like enabled being set on HiOptions
+      if ((<any>optionsKeys).includes(schemaKey)) {
+        if (typeof typesMap[schema[schemaKey]] === 'function') {
+          if (options[schemaKey] !== null && typeof options[schemaKey] !== 'undefined') {
+            containerObject[schemaKey] = typesMap[schema[schemaKey]](options[schemaKey]);
+          }
+        } else {
+          console.log('Handler for', schemaKey, schema[schemaKey], 'not implemented');
         }
-      } else {
-        console.log('Handler for', schemaKey, schema[schemaKey], 'not implemented');
       }
     }
   }

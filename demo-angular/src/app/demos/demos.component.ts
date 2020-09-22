@@ -119,6 +119,7 @@ export class DemosComponent implements OnInit {
 
   onItemTap(args) {
     const demo = this.selectedSource[args.index];
+    console.log(demo)
     this.router.navigate([demo.route]);
   }
 

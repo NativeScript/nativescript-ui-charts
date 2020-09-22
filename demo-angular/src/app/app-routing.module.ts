@@ -6,8 +6,8 @@ import { DemosComponent } from "./demos/demos.component";
 import { BasicLineComponent } from "./demos/line-charts/basic-line/basic-line.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/demos", pathMatch: "full" },
-    { path: "demos", component: DemosComponent },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "home", component: DemosComponent },
     { path: "demos/line-charts/basic-line/basic-line-page", component: BasicLineComponent }
 ];
 
