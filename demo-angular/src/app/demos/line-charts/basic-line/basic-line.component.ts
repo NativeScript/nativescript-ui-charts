@@ -5,7 +5,7 @@ import { UIChartsView } from "@nativescript/ui-charts";
     selector: "ns-basic-line",
     templateUrl: "./basic-line.component.html"
 })
-export class BasicLineComponent implements OnInit {
+export class BasicLineComponent {
   chartOptions: any; 
   private _chart: UIChartsView;
  

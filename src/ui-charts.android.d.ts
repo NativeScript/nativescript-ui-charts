@@ -1,8 +1,7 @@
 import { UIChartsViewBase } from './ui-charts.common';
 export declare class UIChartsView extends UIChartsViewBase {
-    onLoaded(): void;
+    private _orientationHandler;
     createNativeView(): any;
-    onUnloaded(): void;
     /**
      * Initializes properties/listeners of the native view.
      */
