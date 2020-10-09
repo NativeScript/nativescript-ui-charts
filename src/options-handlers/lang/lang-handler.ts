@@ -2,7 +2,7 @@ import { optionsBuilder } from "../helpers/helpers";
 import { isAndroid } from "@nativescript/core";
 
 export function langHandler(langOptions) {
-  const lang = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HIlang() : new HIlang();
+  const lang = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HILang() : new HILang();
 
   const langSchema = {
     accessibility: 'HIAccessibility',
