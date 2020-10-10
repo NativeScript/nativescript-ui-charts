@@ -1,6 +1,7 @@
 import { UIChartsViewBase } from './ui-charts.common';
 import { optionsHandler } from './options-handlers/options-handler';
 import { Application } from '@nativescript/core';
+import { langHandler } from './options-handlers/lang/lang-handler';
 
 export class UIChartsView extends UIChartsViewBase {
     public onLoaded() {
@@ -52,6 +53,13 @@ export class UIChartsView extends UIChartsViewBase {
         const hiOptions = optionsHandler(this.options);
         if (this.nativeView) {
             this.nativeView.setOptions(hiOptions);
+        }
+    }
+
+    public setLangOptions(opts: any) {
+        const hiLang = langHandler(opts);
+        if (this.nativeView) {
+            this.nativeView.lang = hiLang;
         }
     }
 

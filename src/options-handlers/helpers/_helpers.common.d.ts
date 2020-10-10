@@ -65,6 +65,7 @@ export declare const typesMap: {
     HIHover: (options: any) => any;
     HILabel: (options: any) => any;
     HILabels: (options: any) => any;
+    HILang: (options: any) => any;
     HILayoutAlgorithm: (options: any) => any;
     HILegend: (options: any) => any;
     HILink: (options: any) => any;

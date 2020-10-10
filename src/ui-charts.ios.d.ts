@@ -10,6 +10,7 @@ export declare class UIChartsView extends UIChartsViewBase {
      */
     initNativeView(): void;
     setOptions(opts: any): void;
+    setLangOptions(opts: any): void;
     updateOptions(opts: any): void;
     setExtremes(newMin: any, newMax: any, xAxisIndex?: number): void;
 }

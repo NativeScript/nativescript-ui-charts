@@ -1,4 +1,13 @@
 {
+  "nativescript": {
+    "id": "org.nativescript.chartsdemocore",
+    "tns-android": {
+      "version": "6.5.1"
+    },
+    "tns-ios": {
+      "version": "6.5.1"
+    }
+  },
   "scripts": {
     "publish.android.apk": "tns build android --no-hmr --env.uglify --env.production --release --key-store-path 'charts.keystore' --key-store-password charts --key-store-alias char --key-store-alias-password charts --copy-to charts_release.apk"
   },
@@ -8,13 +17,12 @@
   "dependencies": {
     "@nativescript/core": "^7.0.0-rc.24",
     "@nativescript/theme": "~2.3.0",
-    "@nativescript/ui-charts": "file:../src",
-    "@nativescript/webpack": "3.0.0"
+    "@nativescript/ui-charts": "file:../src"
   },
   "devDependencies": {
-    "typescript": "3.9.7"
+    "nativescript-dev-webpack": "~1.5.0",
+    "typescript": "~3.5.3"
   },
   "gitHead": "20a65d338ae8f8911087ab6615b89363f864b07b",
-  "readme": "NativeScript Application",
-  "main": "app.js"
+  "readme": "NativeScript Application"
 }

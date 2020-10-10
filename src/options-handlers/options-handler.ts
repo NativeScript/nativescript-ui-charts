@@ -73,7 +73,6 @@ export function optionsHandler(options) {
     defs: 'HIDefs',
     drilldown: 'HIDrilldown',
     exporting: 'HIExporting',
-    legend: 'HILegend',
     loading: 'HILoading',
     navigation: 'HINavigation',
     noData: 'HINoData',
