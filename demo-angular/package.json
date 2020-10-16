@@ -1,20 +1,12 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.chartsdemoangular",
-    "tns-android": {
-      "version": "6.5.3"
-    },
-    "tns-ios": {
-      "version": "6.5.2"
-    }
-  },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "scripts": {
     "clean": "npx rimraf hooks node_modules package-lock.json platforms",
     "ngcc": "ngcc --properties es2015 module main --first-only",
-    "postinstall": "npm run ngcc"
+    "postinstall": "npm run ngcc",
+    "ios": "ns clean && ns run ios"
   },
   "dependencies": {
     "@angular/animations": "~10.0.0",
@@ -26,7 +18,7 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@nativescript/angular": "rc",
-    "@nativescript/core": "rc",
+    "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~2.3.0",
     "@nativescript/ui-charts": "file:../src/nativescript-ui-charts.tgz",
     "reflect-metadata": "~0.1.12",
@@ -35,10 +27,13 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "~10.0.0",
-    "@nativescript/types": "rc",
+    "@nativescript/android": "7.0.0",
+    "@nativescript/ios": "7.0.1",
+    "@nativescript/types": "~7.0.0",
     "@nativescript/webpack": "rc",
     "@ngtools/webpack": "~10.0.0",
     "typescript": "~3.9.0"
   },
-  "readme": "NativeScript Application"
+  "readme": "NativeScript Application",
+  "main": "main.js"
 }
