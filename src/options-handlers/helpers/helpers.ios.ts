@@ -35,7 +35,7 @@ export function toArrayListRecursive(arr) {
 
 export function colorToString(color: any) {
   const c = new Color(color);
-  return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a / 255})`;
+  return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a/255})`;
 }
 
 export function toHIColor(color) {

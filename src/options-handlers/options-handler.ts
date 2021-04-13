@@ -62,6 +62,7 @@ export function optionsHandler(options) {
   const hiOptionsSchema = {
     accessibility: 'HIAccessibility',
     // additionalOptions: 'NSDictionary<any, any>',
+    annotationsOptions: 'HIAnnotationsOptions', // array
     annotations: 'HIAnnotations', // array
     boost: 'HIBoost',
     caption: 'HICaption',
@@ -73,6 +74,7 @@ export function optionsHandler(options) {
     defs: 'HIDefs',
     drilldown: 'HIDrilldown',
     exporting: 'HIExporting',
+    legend: 'HILegend',
     loading: 'HILoading',
     navigation: 'HINavigation',
     noData: 'HINoData',

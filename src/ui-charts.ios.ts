@@ -7,10 +7,10 @@ export class UIChartsView extends UIChartsViewBase {
     public onLoaded() {
         super.onLoaded();
 
-        const hiOptions = optionsHandler(this.options);
-        console.log(hiOptions);
+        // const hiOptions = optionsHandler(this.options);
+        // console.log(hiOptions);
 
-        (<any>this.nativeView).options = hiOptions;
+        // (<any>this.nativeView).options = hiOptions;
     }
 
     public createNativeView() {
@@ -77,6 +77,12 @@ export class UIChartsView extends UIChartsViewBase {
           nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
         }
     }
+
+    public enableAnnotationsModule() {
+        if (this.nativeView) {
+            this.nativeView.plugins = ["annotations"];
+        }
+    };
 }
 
 @NativeClass()
@@ -112,5 +118,4 @@ function getVisibleViewController(rootViewController?: UIViewController): UIView
     }
 
     return rootViewController;
-
 }

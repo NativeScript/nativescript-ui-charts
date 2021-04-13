@@ -10,7 +10,7 @@
     
     <GridLayout>
         <GridLayout id="main" rows="*">
-            <uc:UIChartsView row="0" options="{{ chartOptions }}" />
+            <uc:UIChartsView row="0" id="chartView" loaded="chartViewLoaded" />
         </GridLayout>
     </GridLayout>
 </Page>

@@ -52,6 +52,7 @@ export declare const typesMap: {
     string: (options: any) => any;
     HIAccessibility: (options: any) => any;
     HIAlignObject: (options: any) => any;
+    HIAnnotations: (options: any) => any;
     HIAnnotationsOptions: (options: any) => any;
     HIAnimationOptionsObject: (options: any) => any;
     HIButtonOptions: (options: any) => any;
@@ -65,7 +66,6 @@ export declare const typesMap: {
     HIHover: (options: any) => any;
     HILabel: (options: any) => any;
     HILabels: (options: any) => any;
-    HILang: (options: any) => any;
     HILayoutAlgorithm: (options: any) => any;
     HILegend: (options: any) => any;
     HILink: (options: any) => any;

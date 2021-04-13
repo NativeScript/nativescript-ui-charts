@@ -98,7 +98,7 @@ import { popupHandler } from "../popup/popup-handler";
 import { shapesHandler } from "../shapes/shapes-handler";
 import { buttonOptionsHandler } from "../buttonOptions/buttonOptions-handler";
 import { themeHandler } from "../theme/theme-handler";
-import { langHandler } from "../lang/lang-handler";
+import { annotationsHandler } from "../annotations/annotations-handler";
 
 const seriesHandlers = {
   'HIArea': (options) => areaHandler(options),
@@ -157,7 +157,7 @@ export const typesMap = {
   'string': (options) => options,
   'HIAccessibility': (options) => accessibilityHandler(options),
   'HIAlignObject': (options) => alignObjectHandler(options),
-  // 'HIAnnotations': (options) => annotationsHandler(options),
+  'HIAnnotations': (options) => annotationsHandler(options),
   'HIAnnotationsOptions': (options) => annotationsOptionsHandler(options),
   'HIAnimationOptionsObject': (options) => animationOptionsObjectHandler(options),
   // 'HIBoost': (options) => boostHandler(options),
@@ -178,7 +178,6 @@ export const typesMap = {
   'HIHover': (options) => hoverHandler(options),
   'HILabel': (options) => labelHandler(options),
   'HILabels': (options) => labelsHandler(options),
-  'HILang': (options) => langHandler(options),
   'HILayoutAlgorithm': (options) => layoutAlgorithmHandler(options),
   'HILegend': (options) => legendHandler(options),
   'HILink': (options) => linkHandler(options),

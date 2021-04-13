@@ -1,1 +1,1 @@
-export declare function timeHandler(timeOptions: any): any;
+export declare function timeHandler(titleOptions: any): any;

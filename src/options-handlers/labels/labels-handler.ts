@@ -38,12 +38,12 @@ export function labelsHandler(labelsOptions) {
     zIndex: 'number'
   };
 
-  if (labelsOptions instanceof Array) {
+  if (labelsOptions instanceof Array || labelsOptions.length > 0) {
     const labelsArray = [];
 
     for(let i = 0; i < labelsOptions.length; i++) {
       const labels = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HILabels() : new HILabels();
-      labelsArray.push(optionsBuilder(labelsSchema, labelsOptions, labels));
+      labelsArray.push(optionsBuilder(labelsSchema, labelsOptions[i], labels));
     }
 
     return convertJSArrayToNative(labelsArray);

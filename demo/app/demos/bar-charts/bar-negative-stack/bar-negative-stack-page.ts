@@ -27,6 +27,7 @@ var categories = [
   '100 + ',
 ];
 
+let chartView;
 const viewModel = fromObject({
   chartOptions: {
     chart: {
@@ -133,6 +134,11 @@ export function onNavigatingTo(args: NavigatedData) {
   if (args.isBackNavigation) return;
 
   page.bindingContext = viewModel;
+}
+
+export function chartViewLoaded(args) {
+  chartView = args.object;
+  chartView.setOptions(viewModel.get('chartOptions'));
 }
 
 export function goBack(args) {

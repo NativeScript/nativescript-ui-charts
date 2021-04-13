@@ -1,7 +1,7 @@
 import { optionsBuilder } from "../helpers/helpers";
 import { isAndroid } from "@nativescript/core";
 
-export function timeHandler(timeOptions) {
+export function timeHandler(titleOptions) {
   const time = isAndroid ? new com.highsoft.highcharts.common.hichartsclasses.HITime() : new HITime();
 
   const timeSchema = {
@@ -12,5 +12,5 @@ export function timeHandler(timeOptions) {
     useUTC: 'number',
   };
 
-  return optionsBuilder(timeSchema, timeOptions, time);
-} 
+  return optionsBuilder(timeSchema, titleOptions, time);
+}

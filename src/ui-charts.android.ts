@@ -2,13 +2,32 @@ import { UIChartsViewBase } from './ui-charts.common';
 import { optionsHandler } from './options-handlers/options-handler';
 import { Application } from '@nativescript/core';
 import { langHandler } from './options-handlers/lang/lang-handler';
-
 export class UIChartsView extends UIChartsViewBase {
+    public customLayoutChangeListener;
+    public chartHeight;
+    public chartWidth;
     public onLoaded() {
         super.onLoaded();
-
-        const hiOptions = optionsHandler(this.options);
-        (<any>this.nativeView).setOptions(hiOptions);
+        this.customLayoutChangeListener = new android.view.View.OnLayoutChangeListener({
+            onLayoutChange: (v) => {
+                var w = this.nativeView.owner.get();
+                if (w && this.nativeView.getOptions()) {
+                    const newWidth = w.getActualSize().width;
+                    const newHeight = w.getActualSize().height;
+                    if (this.chartHeight !== newHeight) {
+                        if (this.nativeView.getOptions().getChart()) {
+                            this.nativeView.getOptions().getChart().setHeight(new java.lang.Long(newHeight));
+                            this.nativeView.getOptions().getChart().setWidth(new java.lang.Long(newWidth));
+                            this.chartHeight = newHeight;
+                            this.chartWidth = newWidth;
+                            var hiOptions = optionsHandler(this.options);
+                            this.nativeView.setOptions(hiOptions);
+                        }
+                    } 
+                }
+            }
+        });
+        this.nativeView.addOnLayoutChangeListener(this.customLayoutChangeListener);
     }
 
     public createNativeView() {
@@ -19,6 +38,7 @@ export class UIChartsView extends UIChartsViewBase {
 
     public onUnloaded() {
         super.onUnloaded();
+        this.nativeView.removeOnLayoutChangeListener(this.customLayoutChangeListener);
     }
 
     /**
@@ -56,13 +76,6 @@ export class UIChartsView extends UIChartsViewBase {
         }
     }
 
-    public setLangOptions(opts: any) {
-        const hiLang = langHandler(opts);
-        if (this.nativeView) {
-            this.nativeView.lang = hiLang;
-        }
-    }
-
     public updateOptions(opts) {
         this.options = opts;
         const hiOptions = optionsHandler(this.options);
@@ -70,6 +83,13 @@ export class UIChartsView extends UIChartsViewBase {
             this.nativeView.update(hiOptions);
         }
     }
+
+    public setLangOptions(opts: any) {
+        const hiLang = langHandler(opts);
+        if (this.nativeView) {
+            this.nativeView.lang = hiLang;
+        }
+      }
 
     public setExtremes(newMin: any, newMax: any, xAxisIndex = 0) {
         const nativeview = (<any>this.nativeView);
@@ -81,4 +101,12 @@ export class UIChartsView extends UIChartsViewBase {
         nativeview.zoomOut();
         nativeview.update(opts);
     }
+
+    public enableAnnotationsModule() {
+        if (this.nativeView) {
+            const nativeArray = new java.util.ArrayList<any>();
+            nativeArray.add("annotations");
+            this.nativeView.plugins = nativeArray;
+        }
+    };
 }

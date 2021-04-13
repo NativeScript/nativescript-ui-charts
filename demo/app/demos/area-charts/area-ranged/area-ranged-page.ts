@@ -1,6 +1,7 @@
 import { NavigatedData, Page } from '@nativescript/core/ui/page';
 import { fromObject } from '@nativescript/core/data/observable';
 
+let chartView;
 const viewModel = fromObject({
   chartOptions: {
     chart: {
@@ -59,6 +60,11 @@ export function onNavigatingTo(args: NavigatedData) {
 
 export function goBack(args) {
   args.object.page.frame.goBack();
+}
+
+export function chartViewLoaded(args) {
+  chartView = args.object;
+  chartView.setOptions(viewModel.get('chartOptions'));
 }
 
 function getData() {

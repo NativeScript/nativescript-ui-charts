@@ -2,6 +2,7 @@ import { NavigatedData, Page } from '@nativescript/core/ui/page';
 import { fromObject } from '@nativescript/core/data/observable';
 
 let viewModel;
+let chartView;
 
 export function onNavigatingTo(args: NavigatedData) {
   viewModel = fromObject({
@@ -121,8 +122,16 @@ export function onNavigatingTo(args: NavigatedData) {
         },
       ],
     });
+    if (chartView) {
+      chartView.updateOptions(viewModel.get('chartOptions'));
+    }
     viewModel.set('loading', false);
   }, 2000);
+}
+
+export function chartViewLoaded(args) {
+  chartView = args.object;
+  chartView.setOptions(viewModel.get('chartOptions'));
 }
 
 export function goBack(args) {
@@ -180,4 +189,5 @@ export function changeData(args) {
   }
   
   viewModel.set('chartOptions', Object.assign({}, cOpts));
+  chartView.updateOptions(viewModel.chartOptions);
 }

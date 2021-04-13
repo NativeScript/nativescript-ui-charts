@@ -1,6 +1,7 @@
 import { NavigatedData, Page } from '@nativescript/core/ui/page';
 import { fromObject } from '@nativescript/core/data/observable';
 
+let chartView;
 const viewModel = fromObject({
   chartOptions: {
     chart: {
@@ -44,6 +45,11 @@ const viewModel = fromObject({
     ],
   },
 });
+
+export function chartViewLoaded(args) {
+  chartView = args.object;
+  chartView.setOptions(viewModel.get('chartOptions'));
+}
 
 export function onNavigatingTo(args: NavigatedData) {
   const page = <Page>args.object;
