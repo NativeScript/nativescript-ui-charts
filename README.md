@@ -26,9 +26,16 @@ In `demo` folder you can find the usage of the plugin for TypeScript non-Angular
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:uc="@nativescript/ui-charts">  <!-- Don't forget to declare the namespace -->
   <GridLayout>
-    <uc:UIChartsView options="{{ chartOptions }}" />
+    <uc:UIChartsView id="chartView" loaded="chartViewLoaded" />
   </GridLayout>
 </Page>
+```
+
+```ts
+export function chartViewLoaded(args) {
+  chartView = args.object;
+  chartView.setOptions(viewModel.get('chartOptions'));
+}
 ```
 
 The `chartOptions` is a HICharts options object,
