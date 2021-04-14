@@ -1,39 +1,39 @@
 {
-	"name": "@nativescript/ui-charts-angular",
-	"ngPackage": {
-		"lib": {
-			"entryFile": "index.ts",
-			"umdModuleIds": {
-				"@nativescript/core": "ns-core",
-				"@nativescript/angular": "ns-angular",
-				"@nativescript/ui-charts": "ns-ui-charts"
-			}
-		},
-		"whitelistedNonPeerDependencies": [
-			"."
-		]
-	},
-	"scripts": {
-		"build": "npm i && ng-packagr -p package.json && cd dist && cpy '**/*' '../../src/angular' --parents"
-	},
-	"devDependencies": {
-		"@angular/animations": "~10.0.0",
-		"@angular/common": "~10.0.0",
-		"@angular/compiler": "~10.0.0",
-		"@angular/compiler-cli": "~10.0.0",
-		"@angular/core": "~10.0.0",
-		"@angular/forms": "~10.0.0",
-		"@angular/platform-browser": "~10.0.0",
-		"@angular/platform-browser-dynamic": "~10.0.0",
-		"@angular/router": "~10.0.0",
-		"@nativescript/angular": "~10.0.0",
-		"@nativescript/core": "~7.0.0",
-		"@nativescript/ui-charts": "latest",
-		"@nativescript/webpack": "^4.1.0",
-		"cpy-cli": "~3.1.1",
-		"ng-packagr": "~10.0.0",
-		"rxjs": "^6.6.0",
-		"typescript": "~3.9.0",
-		"zone.js": "^0.10.3"
-	}
+  "name": "@nativescript/ui-charts-angular",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "@nativescript/core": "ns-core",
+        "@nativescript/angular": "ns-angular",
+        "@nativescript/ui-charts": "ns-ui-charts"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "."
+    ]
+  },
+  "scripts": {
+    "build": "npm i && ng-packagr -p package.json && cd dist && cpy '**/*' '../../src/angular' --parents"
+  },
+  "devDependencies": {
+    "@angular/animations": "~10.0.0",
+    "@angular/common": "~10.0.0",
+    "@angular/compiler": "~10.0.0",
+    "@angular/compiler-cli": "~10.0.0",
+    "@angular/core": "~10.0.0",
+    "@angular/forms": "~10.0.0",
+    "@angular/platform-browser": "~10.0.0",
+    "@angular/platform-browser-dynamic": "~10.0.0",
+    "@angular/router": "~10.0.0",
+    "@nativescript/angular": "~10.0.0",
+    "@nativescript/core": "^7.0.0",
+    "@nativescript/ui-charts": "latest",
+    "@nativescript/webpack": "~4.1.0",
+    "cpy-cli": "~3.1.1",
+    "ng-packagr": "~10.0.0",
+    "rxjs": "^6.6.0",
+    "typescript": "~3.9.0",
+    "zone.js": "^0.10.3"
+  }
 }
