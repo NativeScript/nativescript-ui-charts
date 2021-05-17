@@ -34,6 +34,20 @@ import { frontHandler } from '../frame/front/front-handler';
 import { leftHandler } from '../frame/left/left-handler';
 import { rightHandler } from '../frame/right/right-handler';
 import { topHandler } from '../frame/top/top-handler';
+import { layoutAlgorithmHandler } from "../layoutAlgorithm/layoutAlgorithm-handler";
+import { linkHandler } from "../link/link-handler";
+import { exportingHandler } from "../exporting/exporting-handler";
+import { frameHandler } from "../frame/frame-handler";
+import { options3dHandler } from "../options3d/options3d-handler";
+import { navigationHandler } from "../navigation/navigation-handler";
+import { annotationsOptionsHandler } from "../annotationsOptions/annotationsOptions-handler";
+import { animationOptionsObjectHandler } from "../animationOptionsObject/animationOptionsObject-handler";
+import { popupHandler } from "../popup/popup-handler";
+import { shapesHandler } from "../shapes/shapes-handler";
+import { buttonOptionsHandler } from "../buttonOptions/buttonOptions-handler";
+import { themeHandler } from "../theme/theme-handler";
+import { annotationsHandler } from "../annotations/annotations-handler";
+import { eventsHandler } from "../events/events-handler";
 
 // Series Handler imports
 import { areaHandler } from '../series/area/area-handler';
@@ -86,19 +100,7 @@ import { waterfallHandler } from '../series/waterfall/waterfall-handler';
 import { windbarbHandler } from '../series/windbarb/windbarb-handler';
 import { wordcloudHandler } from '../series/wordcloud/wordcloud-handler';
 import { xrangeHandler } from '../series/xrange/xrange-handler';
-import { layoutAlgorithmHandler } from "../layoutAlgorithm/layoutAlgorithm-handler";
-import { linkHandler } from "../link/link-handler";
-import { exportingHandler } from "../exporting/exporting-handler";
-import { frameHandler } from "../frame/frame-handler";
-import { options3dHandler } from "../options3d/options3d-handler";
-import { navigationHandler } from "../navigation/navigation-handler";
-import { annotationsOptionsHandler } from "../annotationsOptions/annotationsOptions-handler";
-import { animationOptionsObjectHandler } from "../animationOptionsObject/animationOptionsObject-handler";
-import { popupHandler } from "../popup/popup-handler";
-import { shapesHandler } from "../shapes/shapes-handler";
-import { buttonOptionsHandler } from "../buttonOptions/buttonOptions-handler";
-import { themeHandler } from "../theme/theme-handler";
-import { annotationsHandler } from "../annotations/annotations-handler";
+
 
 const seriesHandlers = {
   'HIArea': (options) => areaHandler(options),
@@ -174,6 +176,7 @@ export const typesMap = {
   // 'HIDefs': (options) => defsHandler(options),
   // 'HIDrilldown': (options) => drilldownHandler(options),
   'HIExporting': (options) => exportingHandler(options),
+  'HIEvents': (options) => eventsHandler(options),
   'HIFunction': (options) => functionHandler(options),
   'HIHover': (options) => hoverHandler(options),
   'HILabel': (options) => labelHandler(options),

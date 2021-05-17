@@ -62,6 +62,7 @@ export declare const typesMap: {
     HIDateTimeLabelFormats: (options: any) => any;
     HIDataLabels: (options: any) => java.util.ArrayList<any>;
     HIExporting: (options: any) => any;
+    HIEvents: (options: any) => any;
     HIFunction: (options: any) => com.highsoft.highcharts.core.HIFunction | HIFunction;
     HIHover: (options: any) => any;
     HILabel: (options: any) => any;
