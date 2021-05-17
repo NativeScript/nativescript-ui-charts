@@ -18,7 +18,7 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@nativescript/angular": "~10.0.0",
-    "@nativescript/core": "~7.0.0",
+    "@nativescript/core": "^7.0.0",
     "@nativescript/theme": "~2.3.0",
     "@nativescript/ui-charts": "file:../src/nativescript-ui-charts.tgz",
     "reflect-metadata": "~0.1.12",
@@ -27,10 +27,10 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "~10.0.0",
-    "@nativescript/android": "7.0.0",
-    "@nativescript/ios": "7.0.1",
-    "@nativescript/types": "~7.0.0",
-    "@nativescript/webpack": "4.1.0",
+    "@nativescript/android": "7.0.1",
+    "@nativescript/ios": "^8.0.0",
+    "@nativescript/types": "^7.0.0",
+    "@nativescript/webpack": "~4.1.0",
     "@ngtools/webpack": "~10.0.0",
     "typescript": "~3.9.0"
   },
