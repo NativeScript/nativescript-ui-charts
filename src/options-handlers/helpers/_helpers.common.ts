@@ -28,6 +28,7 @@ import { tooltipHandler } from "../tooltip/tooltip-handler";
 import { xAxisHandler } from "../xAxis/xAxis-handler";
 import { yAxisHandler } from "../yAxis/yAxis-handler";
 import { zAxisHandler } from "../zAxis/zAxis-handler";
+import { zonesHandler } from "../zones/zones-handler";
 import { backHandler } from '../frame/back/back-handler';
 import { bottomHandler } from '../frame/bottom/bottom-handler';
 import { frontHandler } from '../frame/front/front-handler';
@@ -211,6 +212,7 @@ export const typesMap = {
   'HIXAxis': (options) => xAxisHandler(options),
   'HIYAxis': (options) => yAxisHandler(options),
   'HIZAxis': (options) => zAxisHandler(options),
+  'HIZones': (options) => zonesHandler(options),
 
   // Frame handlers
   'HIFrame': (options) => frameHandler(options),
