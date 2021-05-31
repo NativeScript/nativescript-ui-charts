@@ -93,6 +93,7 @@ export declare const typesMap: {
     HIXAxis: (options: any) => java.util.ArrayList<any>;
     HIYAxis: (options: any) => java.util.ArrayList<any>;
     HIZAxis: (options: any) => java.util.ArrayList<any>;
+    HIZones: (options: any) => java.util.ArrayList<any>;
     HIFrame: (options: any) => any;
     HIBack: (options: any) => any;
     HIBottom: (options: any) => any;
