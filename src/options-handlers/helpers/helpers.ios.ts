@@ -1,20 +1,19 @@
-import { Color } from "@nativescript/core";
-import { typesMap as _typesMap } from "./_helpers.common";
+import { Color } from '@nativescript/core';
+import { typesMap as _typesMap } from './_helpers.common';
 
 const typesMap = Object.assign({}, _typesMap, {
-  'number': (options) => fromJSToNativePrimitive(options),
-  'boolean': (options) => fromJSToNativePrimitive(options),
-  'Array': (options) => convertJSArrayToNative(options),
-  'HIColor': (options) => toHIColor(options),
-})
+  number: (options) => fromJSToNativePrimitive(options),
+  boolean: (options) => fromJSToNativePrimitive(options),
+  Array: (options) => convertJSArrayToNative(options),
+  HIColor: (options) => toHIColor(options),
+});
 
 export function convertJSArrayToNative(array) {
-  return new NSArray({ array: array });;
+  return new NSArray({ array: array });
 }
 
 export function fromJSToNativePrimitive(value) {
   // stub
-  if (typeof (value) === 'boolean') return value ? 1 : 0;
   return value;
 }
 
@@ -35,7 +34,7 @@ export function toArrayListRecursive(arr) {
 
 export function colorToString(color: any) {
   const c = new Color(color);
-  return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a/255})`;
+  return `rgba(${c.r}, ${c.g}, ${c.b}, ${c.a / 255})`;
 }
 
 export function toHIColor(color) {
@@ -47,17 +46,24 @@ export function toHIColor(color) {
       if (c.radialGradient && c.stops) {
         const stops = c.stops.map((stop, index) => [index, colorToString(stop)]);
         const g = c.radialGradient;
-        colorArray.push(new HIColor({
-          radialGradient: NSDictionary.dictionaryWithObjectsForKeys([g.cx, g.cy, g.r], ["cx", "cy", "r"]),
-          stops: stops
-        }));
+        colorArray.push(
+          new HIColor({
+            radialGradient: NSDictionary.dictionaryWithObjectsForKeys([g.cx, g.cy, g.r], ['cx', 'cy', 'r']),
+            stops: stops,
+          })
+        );
       } else if (c.linearGradient && c.stops) {
         const stops = c.stops.map((stop, index) => [index, colorToString(stop)]);
         const g = c.linearGradient;
-        colorArray.push(new HIColor({
-          linearGradient: NSDictionary.dictionaryWithObjectsForKeys([g.x1, g.y1, g.x2, g.y2], ["x1", "y1", "x2", "y2"]),
-          stops: stops
-        }));
+        colorArray.push(
+          new HIColor({
+            linearGradient: NSDictionary.dictionaryWithObjectsForKeys(
+              [g.x1, g.y1, g.x2, g.y2],
+              ['x1', 'y1', 'x2', 'y2']
+            ),
+            stops: stops,
+          })
+        );
       } else {
         const _c = new Color(c);
         colorArray.push(new HIColor(_c.ios) as any);
@@ -70,15 +76,15 @@ export function toHIColor(color) {
       const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
       const g = color.radialGradient;
       return new HIColor({
-        radialGradient: NSDictionary.dictionaryWithObjectsForKeys([g.cx, g.cy, g.r], ["cx", "cy", "r"]),
-        stops: stops
+        radialGradient: NSDictionary.dictionaryWithObjectsForKeys([g.cx, g.cy, g.r], ['cx', 'cy', 'r']),
+        stops: stops,
       });
     } else if (color.linearGradient && color.stops) {
       const stops = color.stops.map((stop, index) => [index, colorToString(stop)]);
       const g = color.linearGradient;
       return new HIColor({
-        linearGradient: NSDictionary.dictionaryWithObjectsForKeys([g.x1, g.y1, g.x2, g.y2], ["x1", "y1", "x2", "y2"]),
-        stops: stops
+        linearGradient: NSDictionary.dictionaryWithObjectsForKeys([g.x1, g.y1, g.x2, g.y2], ['x1', 'y1', 'x2', 'y2']),
+        stops: stops,
       });
     } else {
       const c = new Color(color);
@@ -105,4 +111,3 @@ export function optionsBuilder(schema, options, containerObject) {
 
   return containerObject;
 }
-
