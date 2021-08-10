@@ -8,12 +8,8 @@ android {
 }
 
 repositories {
-    maven {
-        url "https://highsoft.bintray.com/Highcharts"
-    }
 }
 dependencies {
-    compile 'com.highsoft.highcharts:highcharts:8.2.2'
     compile 'com.google.code.gson:gson:2.4'
 }
 
