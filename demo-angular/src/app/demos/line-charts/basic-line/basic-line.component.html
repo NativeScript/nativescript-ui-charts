@@ -2,7 +2,10 @@
   <Label text="Basic Line Chart" color="white"></Label>
 </ActionBar>
 
-<GridLayout rows="*, auto">
-  <UIChartsView row="0" (loaded)="chartLoaded($event)"></UIChartsView>
+<GridLayout rows="*, auto,auto">
+  <UIChartsView row="0" [options]="chartOptions" [langOptions]="_langOptions"
+    [updateChartContent]="_updateChartContent"></UIChartsView>
   <Button class="btn -primary" row="1" text="Change Data" (tap)="onDataChange($event)"></Button>
+  <Button class="btn -primary" row="2" text="Reload Chart" (tap)="onReloadChart($event)"></Button>
+
 </GridLayout>
