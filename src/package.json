@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/ui-charts",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Nativescript wrapper for Highcharts iOS and Android SDKs",
   "main": "ui-charts",
   "typings": "index.d.ts",
