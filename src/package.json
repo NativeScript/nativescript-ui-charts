@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/ui-charts",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Nativescript wrapper for Highcharts iOS and Android SDKs",
   "main": "ui-charts",
   "typings": "index.d.ts",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "tsc": "npm i && ts-patch install && tsc",
-    "build": "npm run tsc  && npm run build.angular && mv \"$(npm pack | tail -n 1)\" nativescript-ui-charts.tgz",
+    "build": "npm run tsc && npm run build.angular && mv \"$(npm pack | tail -n 1)\" nativescript-ui-charts.tgz",
     "build.angular": "cd ../src-angular && npm run build",
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
