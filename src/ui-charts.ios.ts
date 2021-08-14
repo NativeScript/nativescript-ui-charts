@@ -6,11 +6,6 @@ export class UIChartsView extends UIChartsViewBase {
   private _delegate: HighchartsViewDelegateImpl;
   public onLoaded() {
     super.onLoaded();
-
-    // const hiOptions = optionsHandler(this.options);
-    // console.log(hiOptions);
-
-    // (<any>this.nativeView).options = hiOptions;
   }
 
   public createNativeView() {
