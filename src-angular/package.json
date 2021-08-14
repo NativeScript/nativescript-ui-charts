@@ -17,23 +17,23 @@
     "build": "npm i && ng-packagr -p package.json && cd dist && cpy '**/*' '../../src/angular' --parents"
   },
   "devDependencies": {
-    "@angular/animations": "~10.0.0",
-    "@angular/common": "~10.0.0",
-    "@angular/compiler": "~10.0.0",
-    "@angular/compiler-cli": "~10.0.0",
-    "@angular/core": "~10.0.0",
-    "@angular/forms": "~10.0.0",
-    "@angular/platform-browser": "~10.0.0",
-    "@angular/platform-browser-dynamic": "~10.0.0",
-    "@angular/router": "~10.0.0",
-    "@nativescript/angular": "~10.0.0",
-    "@nativescript/core": "^7.0.0",
+    "@angular/animations": "~12.2.0",
+    "@angular/common": "~12.2.0",
+    "@angular/compiler": "~12.2.0",
+    "@angular/compiler-cli": "~12.2.0",
+    "@angular/core": "~12.2.0",
+    "@angular/forms": "~12.2.0",
+    "@angular/platform-browser": "~12.2.0",
+    "@angular/platform-browser-dynamic": "~12.2.0",
+    "@angular/router": "~12.2.0",
+    "@nativescript/angular": "12.1.0-rc.0",
+    "@nativescript/core": "^8.0.0",
     "@nativescript/ui-charts": "latest",
-    "@nativescript/webpack": "~4.1.0",
+    "@nativescript/webpack": "^5.0.0-rc.3",
     "cpy-cli": "~3.1.1",
-    "ng-packagr": "~10.0.0",
+    "ng-packagr": "~12.2.0",
     "rxjs": "^6.6.0",
-    "typescript": "~3.9.0",
-    "zone.js": "^0.10.3"
+    "typescript": "~4.2.0",
+    "zone.js": "^0.11.4"
   }
 }

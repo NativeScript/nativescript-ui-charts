@@ -19,15 +19,15 @@
       "~/*": [
         "app/*"
       ]
-    },
-    "removeComments": false
+    }
   },
   "include": [
     "references.d.ts",
     "src/tests/**/*.ts"
   ],
   "files": [
-    "./src/main.ts"
+    "./src/main.ts",
+    "./src/polyfills.ts"
   ],
   "exclude": [
     "node_modules",
