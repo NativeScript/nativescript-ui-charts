@@ -68,8 +68,8 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/NativeScript/nativescript-ui-charts",
   "devDependencies": {
-    "@nativescript/core": "^7.0.0",
-    "@nativescript/types": "^7.0.0",
+    "@nativescript/core": "^8.1.5",
+    "@nativescript/types": "^8.1.1",
     "@nativescript/webpack": "~4.1.0",
     "nativescript-vue": "^2.7.0",
     "prompt": "^1.0.0",
