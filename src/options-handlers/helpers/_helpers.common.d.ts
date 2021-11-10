@@ -63,7 +63,7 @@ export declare const typesMap: {
     HIDataLabels: (options: any) => java.util.ArrayList<any>;
     HIExporting: (options: any) => any;
     HIEvents: (options: any) => any;
-    HIFunction: (options: any) => com.highsoft.highcharts.core.HIFunction | HIFunction;
+    HIFunction: (options: any) => HIFunction | com.highsoft.highcharts.core.HIFunction;
     HIHover: (options: any) => any;
     HILabel: (options: any) => any;
     HILabels: (options: any) => any;
