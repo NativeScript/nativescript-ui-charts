@@ -1,5 +1,5 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded" navigatedTo="onNavigatedTo">
-  <ActionBar backgroundColor="black">
+  <ActionBar>
     <Label text="@nativescript/ui-charts"></Label>
   </ActionBar>
   <GridLayout rows="auto, *, auto, auto">

@@ -1,5 +1,5 @@
-﻿@import "~@nativescript/theme/css/core.css";
-@import "~@nativescript/theme/css/blue.css";
+﻿@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/blue.css';
 
 /* Place any CSS rules you want to apply on both iOS and Android here.
 This is where the vast majority of your CSS code goes. */
@@ -9,4 +9,8 @@ This is where the vast majority of your CSS code goes. */
   padding: 5 10;
   margin: 5;
   border-radius: 10;
+}
+
+ActionBar {
+  background-color: black;
 }

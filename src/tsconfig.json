@@ -21,10 +21,14 @@
           "dom"
       ],
       "plugins": [
-        { "transform": "@nativescript/webpack/transformers/ns-transform-native-classes", "type": "raw" }
+        {
+          "transform": "@nativescript/webpack/dist/transformers/NativeClass",
+          "type": "raw"
+        }
       ]
   },
   "exclude": [
-      "node_modules"
+    "node_modules",
+    "tmp"
   ]
 }

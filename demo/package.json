@@ -1,22 +1,20 @@
 {
-  "scripts": {
-    "publish.android.apk": "tns build android --no-hmr --env.uglify --env.production --release --key-store-path 'charts.keystore' --key-store-password charts --key-store-alias char --key-store-alias-password charts --copy-to charts_release.apk"
-  },
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "repository": "<fill-your-repository-here>",
+  "name": "demo",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "@nativescript/core": "^7.0.0",
-    "@nativescript/theme": "~2.3.0",
-    "@nativescript/ui-charts": "file:../src",
-    "@nativescript/webpack": "3.0.0"
+    "@nativescript/core": "~8.1.5",
+    "@nativescript/theme": "~3.0.2",
+    "@nativescript/ui-charts": "file:../src"
   },
   "devDependencies": {
-    "@nativescript/android": "7.0.1",
-    "@nativescript/ios": "^8.0.0",
-    "typescript": "3.9.7"
+    "@nativescript/ios": "8.1.0",
+    "@nativescript/types": "~8.1.1",
+    "@nativescript/webpack": "~5.0.0",
+    "typescript": "~4.3.5"
   },
-  "gitHead": "20a65d338ae8f8911087ab6615b89363f864b07b",
-  "readme": "NativeScript Application",
-  "main": "app.js"
+  "scripts": {
+    "publish.android.apk": "tns build android --no-hmr --env.uglify --env.production --release --key-store-path 'charts.keystore' --key-store-password charts --key-store-alias char --key-store-alias-password charts --copy-to charts_release.apk"
+  }
 }
