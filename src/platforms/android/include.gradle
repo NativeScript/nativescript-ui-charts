@@ -10,7 +10,7 @@ android {
 repositories {
 }
 dependencies {
-    compile 'com.google.code.gson:gson:2.4'
+    implementation 'com.google.code.gson:gson:2.4'
 }
 
   

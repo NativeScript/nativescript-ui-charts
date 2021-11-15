@@ -23,7 +23,6 @@ export class UIChartsView extends UIChartsViewBase {
   }
 
   public disposeNativeView() {
-    this._chartInitialized = false;
     super.disposeNativeView();
   }
 
@@ -44,8 +43,6 @@ export class UIChartsView extends UIChartsViewBase {
     const hiOptions = optionsHandler(this.options);
     if (this.nativeView) {
       this.nativeView.options = hiOptions;
-      this._chartInitialized = true;
-      this.nativeView.reload();
     }
   }
 
@@ -64,13 +61,16 @@ export class UIChartsView extends UIChartsViewBase {
     }
   }
 
-  public setExtremes(newMin: any, newMax: any, xAxisIndex = 0) {
-    const nativeview = <any>this.nativeView;
+  setExtremes(newMin, newMax, xAxisIndex = 0) {
+    const nativeview = this.nativeView;
     if (nativeview) {
-      const opts = nativeview.options as HIOptions;
-      const xaxis = opts.xAxis[xAxisIndex];
-      xaxis.min = newMin;
-      xaxis.max = newMax;
+      const opts = nativeview.options;
+      const xaxis = opts.xAxis.objectAtIndex(xAxisIndex);
+
+      if (xaxis) {
+        xaxis.min = newMin;
+        xaxis.max = newMax;
+      }
       nativeview.zoomOut();
       nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
     }
@@ -92,7 +92,7 @@ class HighchartsViewDelegateImpl extends NSObject implements HIChartViewDelegate
   }
 
   chartViewDidLoad(chart) {
-    //   console.log('HighchartsViewDelegateImpl Did load chart:', chart);
+    // console.log('HighchartsViewDelegateImpl Did load chart:', chart);
   }
 }
 

@@ -2,10 +2,12 @@ import { UIChartsViewBase } from './ui-charts.common';
 import { optionsHandler } from './options-handlers/options-handler';
 import { Application } from '@nativescript/core';
 import { langHandler } from './options-handlers/lang/lang-handler';
+
 export class UIChartsView extends UIChartsViewBase {
   public customLayoutChangeListener;
   public chartHeight;
   public chartWidth;
+  public maxHeight;
   public onLoaded() {
     super.onLoaded();
     this.customLayoutChangeListener = new android.view.View.OnLayoutChangeListener({
@@ -14,15 +16,19 @@ export class UIChartsView extends UIChartsViewBase {
         if (w && this.nativeView.getOptions()) {
           const newWidth = w.getActualSize().width;
           const newHeight = w.getActualSize().height;
-          if (this.chartHeight !== newHeight) {
+          if (!this.maxHeight) this.maxHeight = newHeight;
+          if (newHeight > this.maxHeight) {
+            // condition detected where android chart won't resize above this height,
+            // dont attempt resize to avoid chart being cut off at the bottom
+          } else if (this.chartHeight !== newHeight) {
             if (this.nativeView.getOptions().getChart()) {
               this.nativeView.getOptions().getChart().setHeight(new java.lang.Long(newHeight));
               this.nativeView.getOptions().getChart().setWidth(new java.lang.Long(newWidth));
-              this.chartHeight = newHeight;
-              this.chartWidth = newWidth;
-              var hiOptions = optionsHandler(this.options);
-              this.nativeView.setOptions(hiOptions);
             }
+            this.chartHeight = newHeight;
+            this.chartWidth = newWidth;
+            var hiOptions = optionsHandler(this.options);
+            this.nativeView.update(hiOptions);
           }
         }
       },
@@ -55,7 +61,6 @@ export class UIChartsView extends UIChartsViewBase {
   }
 
   public disposeNativeView() {
-    this._chartInitialized = false;
     Application.off('orientationChanged', (<any>this)._orientationHandler);
     super.disposeNativeView();
   }
@@ -74,8 +79,6 @@ export class UIChartsView extends UIChartsViewBase {
     const hiOptions = optionsHandler(this.options);
     if (this.nativeView) {
       this.nativeView.setOptions(hiOptions);
-      this._chartInitialized = true;
-      this.nativeView.reload();
     }
   }
 

@@ -1,5 +1,5 @@
-import { isAndroid } from "@nativescript/core";
-import { optionsBuilder } from "./helpers/helpers";
+import { isAndroid } from '@nativescript/core';
+import { optionsBuilder } from './helpers/helpers';
 
 const chartTypesToClassName = {
   area: 'HIArea',
@@ -51,7 +51,7 @@ const chartTypesToClassName = {
   waterfall: 'HIWaterfall',
   windbarb: 'HIWindbarb',
   wordcloud: 'HIWordcloud',
-  xrange: 'HIXrange'
+  xrange: 'HIXrange',
 };
 
 export const chartTypes = Object.keys(chartTypesToClassName);
@@ -88,7 +88,7 @@ export function optionsHandler(options) {
     tooltip: 'HITooltip',
     xAxis: 'HIXAxis',
     yAxis: 'HIYAxis',
-    zAxis: 'HIZAxis'
+    zAxis: 'HIZAxis',
   };
 
   if (options && options.chart && options.chart.type) {

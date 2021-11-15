@@ -9,6 +9,7 @@
     "@nativescript/ui-charts": "file:../src"
   },
   "devDependencies": {
+    "@nativescript/android": "8.0.0",
     "@nativescript/ios": "8.1.0",
     "@nativescript/types": "~8.1.1",
     "@nativescript/webpack": "~5.0.0",

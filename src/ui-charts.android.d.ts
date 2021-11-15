@@ -3,6 +3,7 @@ export declare class UIChartsView extends UIChartsViewBase {
     customLayoutChangeListener: any;
     chartHeight: any;
     chartWidth: any;
+    maxHeight: any;
     onLoaded(): void;
     createNativeView(): any;
     onUnloaded(): void;
