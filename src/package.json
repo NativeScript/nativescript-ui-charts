@@ -20,6 +20,7 @@
     "build.angular": "cd ../src-angular && npm run build",
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
+    "src-angular.reset": "cd ../src-angular && npx rimraf node_modules package-lock.json",
     "demo.ios": "tsc && npm i && cd ../demo && tns run ios",
     "demo.android": "npm i && cd ../demo && tns run android",
     "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
@@ -27,7 +28,7 @@
     "demo-angular.android": "npm i && cd ../demo-angular && tns run android --no-hmr",
     "demo-angular.reset": "cd ../demo-angular && npx rimraf -- hooks node_modules platforms package-lock.json",
     "plugin.prepare": "npm run build && cd ../demo && tns plugin remove @nativescript/ui-charts && tns plugin add ../src && cd ../demo-angular && tns plugin remove @nativescript/ui-charts && tns plugin add ../src",
-    "clean": "npm run demo.reset && npm run demo-angular.reset && npx rimraf node_modules package-lock.json angular && npm run tsc"
+    "clean": "npm run src-angular.reset && npm run demo.reset && npm run demo-angular.reset && npx rimraf node_modules package-lock.json angular && npm run tsc"
   },
   "keywords": [
     "NativeScript",

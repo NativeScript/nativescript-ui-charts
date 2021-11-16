@@ -4,6 +4,7 @@ import { Application } from '@nativescript/core';
 import { langHandler } from './options-handlers/lang/lang-handler';
 
 export class UIChartsView extends UIChartsViewBase {
+  public _chartInitialized: boolean = false;
   public customLayoutChangeListener;
   public chartHeight;
   public chartWidth;
@@ -61,6 +62,7 @@ export class UIChartsView extends UIChartsViewBase {
   }
 
   public disposeNativeView() {
+    this._chartInitialized = false;
     Application.off('orientationChanged', (<any>this)._orientationHandler);
     super.disposeNativeView();
   }
@@ -79,6 +81,8 @@ export class UIChartsView extends UIChartsViewBase {
     const hiOptions = optionsHandler(this.options);
     if (this.nativeView) {
       this.nativeView.setOptions(hiOptions);
+      this._chartInitialized = true;
+      this.nativeView.reload();
     }
   }
 

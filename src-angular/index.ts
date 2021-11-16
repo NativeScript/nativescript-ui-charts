@@ -7,7 +7,7 @@ registerElement('UIChartsView', () => UIChartsView);
 // the actual extended class implementing the bugfix
 @Directive({
   // tslint:disable-next-line: directive-selector
-  selector: 'UIChartsView'
+  selector: 'UIChartsView',
 })
 export class UIChartsViewDirective implements OnChanges, OnDestroy {
   private _uiChartsView: UIChartsView = null;
@@ -63,7 +63,7 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   private setChartViewOptions() {
     if (this.options !== null && this.options !== undefined) {
-      if (!this._uiChartsView._chartInitialized) {
+      if (!(<any>this._uiChartsView)._chartInitialized) {
         this._uiChartsView.setOptions(this.options);
       } else {
         if (this.updateChartContent) {
@@ -78,6 +78,6 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
 
 @NgModule({
   declarations: [UIChartsViewDirective],
-  exports: [UIChartsViewDirective]
+  exports: [UIChartsViewDirective],
 })
 export class UIChartsViewModule {}
