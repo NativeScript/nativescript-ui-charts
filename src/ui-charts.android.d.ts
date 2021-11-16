@@ -1,5 +1,6 @@
 import { UIChartsViewBase } from './ui-charts.common';
 export declare class UIChartsView extends UIChartsViewBase {
+    _chartInitialized: boolean;
     customLayoutChangeListener: any;
     chartHeight: any;
     chartWidth: any;

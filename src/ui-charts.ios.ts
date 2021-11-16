@@ -3,6 +3,7 @@ import { optionsHandler } from './options-handlers/options-handler';
 import { langHandler } from './options-handlers/lang/lang-handler';
 
 export class UIChartsView extends UIChartsViewBase {
+  public _chartInitialized: boolean = false;
   private _delegate: HighchartsViewDelegateImpl;
   public onLoaded() {
     super.onLoaded();
@@ -23,6 +24,7 @@ export class UIChartsView extends UIChartsViewBase {
   }
 
   public disposeNativeView() {
+    this._chartInitialized = false;
     super.disposeNativeView();
   }
 
@@ -43,6 +45,8 @@ export class UIChartsView extends UIChartsViewBase {
     const hiOptions = optionsHandler(this.options);
     if (this.nativeView) {
       this.nativeView.options = hiOptions;
+      this._chartInitialized = true;
+      this.nativeView.reload();
     }
   }
 
