@@ -113,7 +113,7 @@ function getVisibleViewController(rootViewController?: UIViewController): UIView
   }
 
   if (rootViewController.isKindOfClass(UITabBarController.class())) {
-    return getVisibleViewController(<UITabBarController>rootViewController);
+    return getVisibleViewController((<UITabBarController>rootViewController).selectedViewController);
   }
 
   return rootViewController;
