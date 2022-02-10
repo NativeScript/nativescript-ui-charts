@@ -1,39 +1,27 @@
 {
   "name": "@nativescript/ui-charts-angular",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "index.ts",
-      "umdModuleIds": {
-        "@nativescript/core": "ns-core",
-        "@nativescript/angular": "ns-angular",
-        "@nativescript/ui-charts": "ns-ui-charts"
-      }
-    },
-    "whitelistedNonPeerDependencies": [
-      "."
-    ]
-  },
   "scripts": {
-    "build": "npm i && ng-packagr -p package.json && cd dist && cpy '**/*' '../../src/angular' --parents"
+    "build": "npm i && ng-packagr -p ng-package.json && cd dist && cpy '**/*' '../../src/angular' --parents"
   },
   "devDependencies": {
-    "@angular/animations": "~12.2.0",
-    "@angular/common": "~12.2.0",
-    "@angular/compiler": "~12.2.0",
-    "@angular/compiler-cli": "~12.2.0",
-    "@angular/core": "~12.2.0",
-    "@angular/forms": "~12.2.0",
-    "@angular/platform-browser": "~12.2.0",
-    "@angular/platform-browser-dynamic": "~12.2.0",
-    "@angular/router": "~12.2.0",
-    "@nativescript/angular": "12.1.0-rc.0",
-    "@nativescript/core": "^8.0.0",
+    "@angular-devkit/build-angular": "13.2.3",
+    "@angular/animations": "~13.2.2",
+    "@angular/common": "~13.2.2",
+    "@angular/compiler": "~13.2.2",
+    "@angular/compiler-cli": "~13.2.2",
+    "@angular/core": "~13.2.2",
+    "@angular/forms": "~13.2.2",
+    "@angular/platform-browser": "~13.2.2",
+    "@angular/platform-browser-dynamic": "~13.2.2",
+    "@angular/router": "~13.2.2",
+    "@nativescript/angular": "~13.0.1",
+    "@nativescript/core": "~8.1.5",
     "@nativescript/ui-charts": "latest",
-    "@nativescript/webpack": "^5.0.0-rc.3",
+    "@nativescript/webpack": "^5.0.4",
     "cpy-cli": "~3.1.1",
-    "ng-packagr": "~12.2.0",
-    "rxjs": "^6.6.0",
-    "typescript": "~4.2.0",
+    "ng-packagr": "~13.2.1",
+    "rxjs": "~7.5.4",
+    "typescript": "~4.5.5",
     "zone.js": "^0.11.4"
   }
 }
