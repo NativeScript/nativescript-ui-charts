@@ -4,16 +4,16 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@nativescript/core": "~8.2.0",
+    "@nativescript/core": "~8.1.5",
     "@nativescript/theme": "~3.0.2",
     "@nativescript/ui-charts": "file:../src"
   },
   "devDependencies": {
-    "@nativescript/android": "8.2.2",
-    "@nativescript/ios": "~8.2.0",
-    "@nativescript/types": "~8.2.0",
-    "@nativescript/webpack": "~5.0.6",
-    "typescript": "~4.5.5"
+    "@nativescript/android": "8.0.0",
+    "@nativescript/ios": "8.1.0",
+    "@nativescript/types": "~8.1.1",
+    "@nativescript/webpack": "~5.0.0",
+    "typescript": "~4.3.5"
   },
   "scripts": {
     "publish.android.apk": "tns build android --no-hmr --env.uglify --env.production --release --key-store-path 'charts.keystore' --key-store-password charts --key-store-alias char --key-store-alias-password charts --copy-to charts_release.apk"

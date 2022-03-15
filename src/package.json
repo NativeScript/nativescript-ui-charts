@@ -69,9 +69,9 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/NativeScript/nativescript-ui-charts",
   "devDependencies": {
-    "@nativescript/core": "^8.1.5",
-    "@nativescript/types": "^8.1.1",
-    "@nativescript/webpack": "~5.0.4",
+    "@nativescript/core": "~8.2.0",
+    "@nativescript/types": "~8.2.0",
+    "@nativescript/webpack": "~5.0.6",
     "nativescript-vue": "^2.9.0",
     "prompt": "^1.2.1",
     "rimraf": "^3.0.2",
