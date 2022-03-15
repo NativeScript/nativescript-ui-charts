@@ -17,7 +17,7 @@
           alignContent="center" class="p-l-20 m-b-20" />
       </Repeater.itemsLayout>
       <Repeater.itemTemplate>
-        <Label class="filter-pill" fontSize="14" text="{{ $value }}" tap="{{ $parents['Repeater'], $parents['Repeater'].onSelectCategory }}"></Label>
+        <Label class="{{ $parents['Repeater'], (type === $parents['Repeater'].selectedType)  ? 'filter-pill selected' : 'filter-pill' }}" fontSize="14" text="{{ type }}" tap="{{ $parents['Repeater'], $parents['Repeater'].onSelectCategory }}"></Label>
       </Repeater.itemTemplate>
     </Repeater>
   </GridLayout>

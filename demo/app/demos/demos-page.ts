@@ -2,7 +2,13 @@ import { fromObject } from '@nativescript/core/data/observable';
 
 const viewModel = fromObject({
   selectedType: 'Line',
-  chartTypes: ['Line', 'Area', 'Bar', 'Column', '3D'],
+  chartTypes: [
+    { type: 'Line' },
+    { type: 'Area' },
+    { type: 'Bar' },
+    { type: 'Column' },
+    { type: '3D' },
+  ],
   lineChart: [
     {
       name: 'Basic Line Chart (async data)',
@@ -112,11 +118,6 @@ const viewModel = fromObject({
     } else {
       console.log('Chart type', chartType, 'not implemented');
     }
-
-    args.object.backgroundColor = '#90EF7F';
-    setTimeout(() => {
-      args.object.backgroundColor = 'rgba(255,255,255,0.2)';
-    }, 100);
   }
 });
 
