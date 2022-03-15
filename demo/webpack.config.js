@@ -1,6 +1,7 @@
 const webpack = require("@nativescript/webpack");
 
 module.exports = (env) => {
+	env.watchNodeModules = true;
 	webpack.init(env);
 
 	// Learn how to customize:

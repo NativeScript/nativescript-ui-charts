@@ -21,13 +21,13 @@
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
     "src-angular.reset": "cd ../src-angular && npx rimraf node_modules package-lock.json",
-    "demo.ios": "tsc && npm i && cd ../demo && tns run ios",
-    "demo.android": "npm i && cd ../demo && tns run android",
+    "demo.ios": "tsc && npm i && cd ../demo && ns run ios",
+    "demo.android": "npm i && cd ../demo && ns run android",
     "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
-    "demo-angular.ios": "npm i && cd ../demo-angular && tns run ios --no-hmr",
-    "demo-angular.android": "npm i && cd ../demo-angular && tns run android --no-hmr",
+    "demo-angular.ios": "npm i && cd ../demo-angular && ns run ios --no-hmr",
+    "demo-angular.android": "npm i && cd ../demo-angular && ns run android --no-hmr",
     "demo-angular.reset": "cd ../demo-angular && npx rimraf -- hooks node_modules platforms package-lock.json",
-    "plugin.prepare": "npm run build && cd ../demo && tns plugin remove @nativescript/ui-charts && tns plugin add ../src && cd ../demo-angular && tns plugin remove @nativescript/ui-charts && tns plugin add ../src",
+    "plugin.prepare": "npm run build && cd ../demo && ns plugin remove @nativescript/ui-charts && ns plugin add ../src && cd ../demo-angular && ns plugin remove @nativescript/ui-charts && ns plugin add ../src",
     "clean": "npm run src-angular.reset && npm run demo.reset && npm run demo-angular.reset && npx rimraf node_modules package-lock.json angular && npm run tsc"
   },
   "keywords": [

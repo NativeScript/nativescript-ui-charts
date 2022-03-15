@@ -6,7 +6,7 @@
   "dependencies": {
     "@nativescript/core": "~8.2.0",
     "@nativescript/theme": "~3.0.2",
-    "@nativescript/ui-charts": "file:../src"
+    "@nativescript/ui-charts": "../src"
   },
   "devDependencies": {
     "@nativescript/android": "8.2.2",

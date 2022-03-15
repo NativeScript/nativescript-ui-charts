@@ -1,4 +1,6 @@
+import { isAndroid } from '@nativescript/core';
 import { fromObject } from '@nativescript/core/data/observable';
+import Theme from '@nativescript/theme';
 
 const viewModel = fromObject({
   selectedType: 'Line',
@@ -8,6 +10,7 @@ const viewModel = fromObject({
     { type: 'Bar' },
     { type: 'Column' },
     { type: '3D' },
+    { type: 'Tests' },
   ],
   lineChart: [
     {
@@ -102,6 +105,12 @@ const viewModel = fromObject({
       name: '3D Scatter Chart',
       route: 'demos/3d-charts/3d-scatter-draggable/3d-scatter-draggable-page',
     },
+  ],
+  'testsChart': [
+    {
+      name: 'Dynamic Chart Height',
+      route: 'demos/tests/dynamic-chart-height/dynamic-chart-height-page'
+    }
   ],
   selectedSource: [],
   onItemTap(args) {
