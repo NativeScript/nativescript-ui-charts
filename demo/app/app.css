@@ -11,6 +11,10 @@ This is where the vast majority of your CSS code goes. */
   border-radius: 10;
 }
 
+.filter-pill.selected {
+  background-color: #90EF7F;
+}
+
 ActionBar {
   background-color: black;
 }

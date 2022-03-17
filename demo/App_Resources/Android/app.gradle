@@ -9,12 +9,17 @@
 // e.g. project.ext.googlePlayServicesVersion = "15.0.1"
 // create a file named before-plugins.gradle in the current directory and place it there
 
-android {
+android {  
+  compileSdkVersion 31
+  buildToolsVersion "32"
   defaultConfig {
-    minSdkVersion 21
+    minSdkVersion 19
+    targetSdkVersion 31
     generatedDensities = []
-  }
-  aaptOptions {
-    additionalParameters "--no-version-vectors"
-  }
+    versionName = "1.0"
+    versionCode = 4
+  }  
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }  
 }

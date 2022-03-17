@@ -19,7 +19,8 @@
       "~/*": [
         "app/*"
       ]
-    }
+    },
+    "removeComments": false
   },
   "include": [
     "references.d.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@nativescript/ui-charts",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "Nativescript wrapper for Highcharts iOS and Android SDKs",
   "main": "ui-charts",
   "typings": "index.d.ts",
@@ -21,13 +21,13 @@
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/platforms/**'",
     "src-angular.reset": "cd ../src-angular && npx rimraf node_modules package-lock.json",
-    "demo.ios": "tsc && npm i && cd ../demo && tns run ios",
-    "demo.android": "npm i && cd ../demo && tns run android",
+    "demo.ios": "tsc && npm i && cd ../demo && ns run ios",
+    "demo.android": "npm i && cd ../demo && ns run android",
     "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
-    "demo-angular.ios": "npm i && cd ../demo-angular && tns run ios --no-hmr",
-    "demo-angular.android": "npm i && cd ../demo-angular && tns run android --no-hmr",
+    "demo-angular.ios": "npm i && cd ../demo-angular && ns run ios --no-hmr",
+    "demo-angular.android": "npm i && cd ../demo-angular && ns run android --no-hmr",
     "demo-angular.reset": "cd ../demo-angular && npx rimraf -- hooks node_modules platforms package-lock.json",
-    "plugin.prepare": "npm run build && cd ../demo && tns plugin remove @nativescript/ui-charts && tns plugin add ../src && cd ../demo-angular && tns plugin remove @nativescript/ui-charts && tns plugin add ../src",
+    "plugin.prepare": "npm run build && cd ../demo && ns plugin remove @nativescript/ui-charts && ns plugin add ../src && cd ../demo-angular && ns plugin remove @nativescript/ui-charts && ns plugin add ../src",
     "clean": "npm run src-angular.reset && npm run demo.reset && npm run demo-angular.reset && npx rimraf node_modules package-lock.json angular && npm run tsc"
   },
   "keywords": [
@@ -69,17 +69,17 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/NativeScript/nativescript-ui-charts",
   "devDependencies": {
-    "@nativescript/core": "^8.1.5",
-    "@nativescript/types": "^8.1.1",
-    "@nativescript/webpack": "~5.0.0",
+    "@nativescript/core": "~8.2.0",
+    "@nativescript/types": "~8.2.0",
+    "@nativescript/webpack": "~5.0.6",
     "nativescript-vue": "^2.9.0",
-    "prompt": "^1.0.0",
+    "prompt": "^1.2.1",
     "rimraf": "^3.0.2",
-    "semver": "^7.3.2",
-    "ts-node": "^9.0.0",
-    "ts-patch": "^1.3.0",
-    "tslint": "^6.1.2",
-    "typescript": "~4.4.4"
+    "semver": "^7.3.5",
+    "ts-node": "^10.5.0",
+    "ts-patch": "^2.0.1",
+    "tslint": "^6.1.3",
+    "typescript": "~4.5.5"
   },
   "bootstrapper": "nativescript-plugin-seed"
 }

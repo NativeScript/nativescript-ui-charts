@@ -38,7 +38,7 @@ export class BasicLineComponent implements OnInit {
     series: [
       {
         name: 'Installation',
-        data: [],
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
       },
       {
         name: 'Manufacturing',

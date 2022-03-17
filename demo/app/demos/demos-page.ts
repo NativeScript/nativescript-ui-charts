@@ -1,8 +1,17 @@
+import { isAndroid } from '@nativescript/core';
 import { fromObject } from '@nativescript/core/data/observable';
+import Theme from '@nativescript/theme';
 
 const viewModel = fromObject({
   selectedType: 'Line',
-  chartTypes: ['Line', 'Area', 'Bar', 'Column', '3D'],
+  chartTypes: [
+    { type: 'Line' },
+    { type: 'Area' },
+    { type: 'Bar' },
+    { type: 'Column' },
+    { type: '3D' },
+    { type: 'Tests' },
+  ],
   lineChart: [
     {
       name: 'Basic Line Chart (async data)',
@@ -97,6 +106,12 @@ const viewModel = fromObject({
       route: 'demos/3d-charts/3d-scatter-draggable/3d-scatter-draggable-page',
     },
   ],
+  'testsChart': [
+    {
+      name: 'Dynamic Chart Height',
+      route: 'demos/tests/dynamic-chart-height/dynamic-chart-height-page'
+    }
+  ],
   selectedSource: [],
   onItemTap(args) {
     const demo = this.selectedSource[args.index];
@@ -112,11 +127,6 @@ const viewModel = fromObject({
     } else {
       console.log('Chart type', chartType, 'not implemented');
     }
-
-    args.object.backgroundColor = '#90EF7F';
-    setTimeout(() => {
-      args.object.backgroundColor = 'rgba(255,255,255,0.2)';
-    }, 100);
   }
 });
 
