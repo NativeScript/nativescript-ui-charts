@@ -102,7 +102,9 @@ class HighchartsViewDelegateImpl extends NSObject implements HIChartViewDelegate
 
 function getVisibleViewController(rootViewController?: UIViewController): UIViewController {
   if (!rootViewController) {
-    rootViewController = UIApplication.sharedApplication.keyWindow.rootViewController;
+    const app = UIApplication.sharedApplication;
+    const window = app.keyWindow || (app.windows.count > 0 && app.windows[0]);
+    rootViewController = window.rootViewController;
   }
   if (rootViewController.presentedViewController) {
     return getVisibleViewController(rootViewController.presentedViewController);
