@@ -45,7 +45,7 @@ export class UIChartsViewDirective implements OnChanges, OnDestroy {
             break;
           case 'langOptions':
             if (changes.langOptions.currentValue) {
-              this.langOptions = changes.options.currentValue;
+              this.langOptions = changes.langOptions.currentValue;
               if (this._chartViewLoaded) {
                 this._uiChartsView.setLangOptions(this.langOptions);
               }
