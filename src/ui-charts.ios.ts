@@ -69,14 +69,16 @@ export class UIChartsView extends UIChartsViewBase {
     const nativeview = this.nativeView;
     if (nativeview) {
       const opts = nativeview.options;
-      const xaxis = opts.xAxis.objectAtIndex(xAxisIndex);
-
-      if (xaxis) {
-        xaxis.min = newMin;
-        xaxis.max = newMax;
+      if (opts) {
+        const xaxis = opts.xAxis.objectAtIndex(xAxisIndex);
+  
+        if (xaxis) {
+          xaxis.min = newMin;
+          xaxis.max = newMax;
+        }
+        nativeview.zoomOut();
+        nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
       }
-      nativeview.zoomOut();
-      nativeview.updateRedrawOneToOneAnimation(nativeview.options, 1, 1, new HIAnimationOptionsObject());
     }
   }
 

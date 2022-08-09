@@ -104,12 +104,14 @@ export class UIChartsView extends UIChartsViewBase {
   public setExtremes(newMin: any, newMax: any, xAxisIndex = 0) {
     const nativeview = <any>this.nativeView;
     const opts = nativeview.getOptions() as com.highsoft.highcharts.common.hichartsclasses.HIOptions;
-    const xaxisArr = opts.getXAxis();
-    const xaxis = xaxisArr.get(xAxisIndex);
-    xaxis.setMin(new java.lang.Long(newMin));
-    xaxis.setMax(new java.lang.Long(newMax));
-    nativeview.zoomOut();
-    nativeview.update(opts);
+    if (opts) {
+      const xaxisArr = opts.getXAxis();
+      const xaxis = xaxisArr.get(xAxisIndex);
+      xaxis.setMin(new java.lang.Long(newMin));
+      xaxis.setMax(new java.lang.Long(newMax));
+      nativeview.zoomOut();
+      nativeview.update(opts);
+    }
   }
 
   public enableAnnotationsModule() {
