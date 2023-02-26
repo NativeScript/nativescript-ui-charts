@@ -32,14 +32,13 @@ const viewModel = fromObject({
     tooltip: {
       valueSuffix: ' millions',
     },
-    // TODO: dataLabels is not working
-    // plotOptions: {
-    //   bar: {
-    //     dataLabels: {
-    //       enabled: true,
-    //     },
-    //   },
-    // },
+    plotOptions: {
+      series: {
+        dataLabels: {
+          enabled: true,
+        },
+      },
+    },
     legend: {
       layout: 'vertical',
       align: 'right',
